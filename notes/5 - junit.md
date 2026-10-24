@@ -69,3 +69,20 @@ Assertions courantes :
 Une assertion non satisfaite produit un échec. Une exception inattendue produit une erreur.
 
 Un message peut être ajouté à une assertion pour expliquer le comportement attendu lorsque le test échoue.
+
+## Paramétrage
+
+`@ParameterizedTest` exécute le même test avec plusieurs jeux de données.
+
+Il évite de dupliquer une méthode lorsque seule l'entrée ou la sortie attendue change.
+
+Sources courantes :
+
+- `@ValueSource` : liste de valeurs simples ;
+- `@NullSource` : valeur nulle ;
+- `@EmptySource` : valeur vide ;
+- `@CsvSource` : plusieurs arguments écrits sous forme de lignes ;
+- `@MethodSource` : données produites par une méthode Java ;
+- `@EnumSource` : valeurs provenant d'une énumération.
+
+Chaque jeu de données constitue une exécution distincte du test et possède son propre résultat.
