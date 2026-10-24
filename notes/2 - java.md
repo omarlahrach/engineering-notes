@@ -79,3 +79,25 @@ La taille du tas se règle **au lancement** du processus : `-Xms` (départ), `-X
 HotSpot a plusieurs ramasse-miettes. Java 8 : *Parallel GC*. Java 9 jusqu'à Java 25 : **G1**. ZGC et Shenandoah existent, ce n'est pas le défaut. On ne les détaille pas ici.
 
 Le GC ne gère pas la *stack*. C'est une autre zone de ram du même processus. Section suivante.
+
+## Stack
+
+La *stack* (en français : **pile**) est une zone de ram **dans** le processus JVM. Ce n'est pas le tas. Le GC gère le tas. Il ne gère pas la stack.
+
+Le noyau réserve **un** bloc de ram : ça, c'est la stack. Dedans, la JVM pose des **petits blocs**, un par appel de méthode. Un petit bloc s'appelle une *frame* (cadre de pile). Il contient les variables locales et les **références**. Une référence, c'est l'adresse d'un objet. L'objet lui-même est dans le **tas**.
+
+Exemple : `Foo foo = new Foo();`
+
+- `new Foo()` : l'objet est dans le tas
+- `foo` : la référence est dans la frame, donc **dans** la stack. Elle pointe vers le tas.
+
+Mécanisme :
+
+1. On entre dans une méthode : la JVM empile une frame **dans** la stack. Cette ram de stack est prise.
+2. La méthode tourne. Sa frame reste au sommet.
+3. La méthode finit : la JVM dépile cette frame. Cette ram de stack est libre tout de suite.
+  L'objet dans le tas n'est **pas** effacé ici. Si plus aucune référence ne pointe vers lui, le GC pourra rendre la ram du tas **plus tard**. Si une autre référence existe encore, l'objet reste dans le tas.
+
+La stack a une **taille fixe** (`-Xss`, souvent ~1 Mo). Chaque frame prend un morceau de cette taille. S'il y a trop d'appels imbriqués (ex. une méthode qui s'appelle elle-même sans fin), les frames dépassent cette taille. La JVM lance `StackOverflowError`.
+
+Il y a **une** stack par **fil d'exécution**. Ce fil s'appelle un *thread*. Section suivante.
