@@ -251,3 +251,30 @@ Le package non nommé convient aux programmes simples. Une application structur�
 Avec plusieurs sources, `javac` doit connaître chaque fichier à compiler et produit une arborescence de `.class` correspondant aux packages.
 
 Déplacer ou livrer tous ces fichiers séparément n'est pas pratique. Java permet de les regrouper dans une seule archive : le JAR. Section suivante.
+
+## JAR
+
+Un JAR (*Java Archive*) est une archive ZIP qui regroupe des fichiers `.class`, leurs ressources et des métadonnées. L'arborescence interne conserve celle des packages.
+
+Un JAR de bibliothèque fournit du code à une autre application. Il n'a pas besoin de point d'entrée.
+
+Un JAR d'application peut déclarer sa classe principale dans `META-INF/MANIFEST.MF`. Il contient alors l'information nécessaire pour savoir où commencer l'exécution.
+
+L'outil `jar` est livré avec le JDK. Il ne compile pas les sources : il regroupe des fichiers déjà compilés.
+
+La commande `jar --create --file application.jar -C out .` crée `application.jar` avec tout le contenu du dossier `out`.
+
+- `--create` demande la création d'une archive ;
+- `--file` indique son nom ;
+- `-C out` place temporairement l'outil dans le dossier `out` ;
+- `.` sélectionne tout son contenu.
+
+L'option `--main-class` ajoute la classe principale au manifeste.
+
+La commande `jar --list --file application.jar` affiche le contenu de l'archive sans l'extraire.
+
+La commande `java -jar application.jar` lance une JVM, lit le manifeste et exécute la classe principale.
+
+Un JAR contient du bytecode, pas des instructions cpu. Il nécessite donc toujours une JVM compatible.
+
+Créer une application manuellement impose de nettoyer les anciens fichiers, compiler tous les sources, exécuter les tests puis produire l'archive. Un outil de build automatise cette chaîne.
