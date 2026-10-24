@@ -181,3 +181,23 @@ Une **édition**, c'est **pour quel usage** : quelles bibliothèques sont dans l
 Eclipse a **deux** rôles : Temurin = un JDK **SE** ; Jakarta EE = les bibliothèques **serveur**. Ce n'est pas le même produit.
 
 On installe un JDK **SE**. Ce SE n'est pas figé : le langage, la JVM, les bibliothèques avancent. Chaque étape a un **numéro**. Ça s'appelle une **version**. Section suivante.
+
+## Version
+
+La **version**, c'est le numéro du JDK SE que tu installes.
+
+Tu prends un JDK **21**. On dit Java 21. Dans ce dossier, `javac`, le programme `java` et les bibliothèques sont **tous** 21.
+
+Temurin 21 et Oracle JDK 21 : deux vendeurs, **le même** Java 21.
+
+`java -version` lit ce numéro. `javac -version` doit dire la même chose : les deux fichiers sont dans **ce** dossier.
+
+Depuis Java 9, un nouveau numéro arrive souvent. Pour la plupart, les correctifs s'arrêtent vite. Pour **8, 11, 17, 21, 25**, ils durent **des années**. Ces versions s'appellent *LTS* (*Long Term Support*).
+
+Tu compiles avec `javac` **8**. Tu lances avec `java` **21** : ça marche. La JVM récente comprend l'ancien bytecode. Ça s'appelle la **rétrocompatibilité**.
+
+Tu compiles avec `javac` **21**. Tu lances avec `java` **8** : ça refuse. L'ancienne JVM ne connaît pas ce bytecode.
+
+On ne garde pas tous les numéros. On en choisit **un**, en général un LTS.
+
+Ce JDK-là, il faut le **mettre sur le disque**. Ça s'appelle l'**installation**. Section suivante.
