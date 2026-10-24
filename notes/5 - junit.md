@@ -32,3 +32,20 @@ Annotations courantes :
 - `@Tag` : classer les tests ;
 - `@Disabled` : désactiver temporairement un test ;
 - `@RepeatedTest` : répéter un test plusieurs fois.
+
+## Cycle
+
+Par défaut, JUnit crée une nouvelle instance de la classe de test avant chaque méthode. Les tests ne partagent donc pas automatiquement leurs champs.
+
+JUnit fournit des annotations pour exécuter du code autour des tests :
+
+- `@BeforeEach` : avant chaque test ;
+- `@AfterEach` : après chaque test ;
+- `@BeforeAll` : une fois avant tous les tests de la classe ;
+- `@AfterAll` : une fois après tous les tests de la classe.
+
+`@BeforeEach` prépare un état indépendant pour chaque test. `@AfterEach` libère les ressources créées pendant ce test.
+
+Par défaut, les méthodes `BeforeAll` et `AfterAll` doivent être statiques.
+
+`@TestInstance(PER_CLASS)` demande à JUnit de réutiliser une seule instance de la classe. Les méthodes `BeforeAll` et `AfterAll` peuvent alors être non statiques, mais les tests risquent davantage de partager un état mutable.
