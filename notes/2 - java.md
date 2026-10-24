@@ -201,3 +201,21 @@ Tu compiles avec `javac` **21**. Tu lances avec `java` **8** : ça refuse. L'anc
 On ne garde pas tous les numéros. On en choisit **un**, en général un LTS.
 
 Ce JDK-là, il faut le **mettre sur le disque**. Ça s'appelle l'**installation**. Section suivante.
+
+## Installation
+
+L'**installation**, c'est copier sur le disque le dossier JDK du **vendeur**, pour la **version** choisie.
+
+Tu ne compiles pas OpenJDK. Le vendeur l'a déjà fait. Tu récupères **son** dossier : son site, ou un programme qui le télécharge pour toi.
+
+Le dossier seul ne suffit pas. Tu branches le shell **à la main** :
+
+1. Tu mets dans `JAVA_HOME` le chemin de **ce** dossier.
+2. Tu ajoutes son `bin` au `PATH`, pour que le shell trouve `java` et `javac`.
+3. Tu lances `java -version` : la version choisie, et le nom du vendeur. Puis `javac -version` : le même numéro.
+
+S'il y a **plusieurs** JDK sur le disque, une seule ligne `bin` gagne : la **première** dans le `PATH`. `java -version` dit lequel.
+
+Sans ce dossier, le noyau n'a pas de programme `java` à lancer. Pas de processus JVM.
+
+`java` et `javac` sont trouvés. Reste à s'en servir sur un fichier. Section suivante.
