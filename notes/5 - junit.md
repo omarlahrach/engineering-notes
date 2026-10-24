@@ -49,3 +49,23 @@ JUnit fournit des annotations pour exécuter du code autour des tests :
 Par défaut, les méthodes `BeforeAll` et `AfterAll` doivent être statiques.
 
 `@TestInstance(PER_CLASS)` demande à JUnit de réutiliser une seule instance de la classe. Les méthodes `BeforeAll` et `AfterAll` peuvent alors être non statiques, mais les tests risquent davantage de partager un état mutable.
+
+## Assertions
+
+Une assertion compare le résultat observé au résultat attendu.
+
+Assertions courantes :
+
+- `assertEquals` : vérifier une égalité ;
+- `assertNotEquals` : vérifier une différence ;
+- `assertTrue` et `assertFalse` : vérifier une condition ;
+- `assertNull` et `assertNotNull` : vérifier la présence d'une valeur ;
+- `assertSame` et `assertNotSame` : comparer l'identité de deux objets ;
+- `assertThrows` : vérifier qu'une exception précise est produite ;
+- `assertDoesNotThrow` : vérifier l'absence d'exception ;
+- `assertAll` : exécuter plusieurs assertions sans s'arrêter à la première erreur ;
+- `assertTimeout` : vérifier une durée maximale.
+
+Une assertion non satisfaite produit un échec. Une exception inattendue produit une erreur.
+
+Un message peut être ajouté à une assertion pour expliquer le comportement attendu lorsque le test échoue.
