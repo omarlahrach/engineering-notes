@@ -31,3 +31,23 @@ Le cpu de *cette* machine ne lit pas le bytecode. Ce qui s'exécute sur le cpu, 
 La JVM la plus courante s'appelle HotSpot. Dans le même processus, elle a un interpréteur et deux compilateurs JIT.
 
 Comment l'interpréteur et les compilateurs JIT s'enchaînent : section suivante.
+
+## JIT
+
+Le JIT (*Just-In-Time*) est un compilateur **dans le processus JVM**. Même PID. Il traduit du bytecode (déjà chargé en ram) vers des instructions cpu, et garde **cette** traduction en ram.
+
+Mécanisme :
+
+1. Un morceau de bytecode s'exécute (une méthode, par exemple). Ce bytecode vient du `.class` chargé en ram. Le fichier sur le disque ne change jamais : le JIT n'écrit pas un `.class`.
+2. L'interpréteur le lit. À chaque appel, un compteur de ce morceau augmente.
+3. Tant que le compteur est bas : encore l'interpréteur. Toute méthode commence ici. Sans ça, le JIT n'a rien à traduire.
+4. Le compteur dépasse un premier seuil. **C1** traduit ce bytecode en instructions cpu et les met en ram.
+  C1 traduit **vite** : peu de cpu du processus pour cette traduction, code cpu encore moyen à l'exécution.
+5. Les appels suivants : le cpu exécute la copie de C1. Le compteur **peut encore monter** si la méthode continue d'être beaucoup appelée.
+6. Si le compteur dépasse un **second** seuil : **C2** retraduit **la même** méthode et **remplace** la copie de C1 en ram.
+  C2 traduit **lentement** : beaucoup de cpu du processus **pendant** la traduction (*traduire avec C2 coûte cher*). En échange, le code cpu est **plus rapide à chaque appel** (plus d'optimisations, ex. *inlining*).
+   Si après C1 la méthode n'est presque plus appelée, le second seuil n'est jamais atteint : **C2 ne tourne pas**. On ne paie pas ce cpu pour rien.
+
+Au démarrage du processus, presque tout est encore aux étapes 2–3. D'où un début plus lent, puis ça accélère : *warmup*.
+
+Le JIT concerne le cpu. La ram du processus JVM, c'est le GC.
