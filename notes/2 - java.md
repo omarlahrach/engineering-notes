@@ -142,3 +142,28 @@ Le JDK est un **dossier** sur le disque.
 `PATH` est une liste de dossiers. Le shell y cherche les commandes. Si `bin` de ce JDK y est, `java` et `javac` marchent. `java -version` affiche **celui** qui est trouvé en premier.
 
 Ce kit ne sort pas de nulle part. Il est fabriqué à partir d'un **source**. Ce source s'appelle OpenJDK. Section suivante.
+
+## OpenJDK
+
+OpenJDK, ce n'est **pas** le dossier JDK. C'est le **projet source** : les fichiers à partir desquels on fabrique `javac`, le programme `java` (la JVM **HotSpot**), et les bibliothèques.
+
+Ce source est **ouvert**. N'importe qui peut le compiler et le ranger en dossier. Tu ne fais pas ça à la main : un **vendeur** le fait. Le dossier qu'il livre, c'est le **JDK**.
+
+D'où **plusieurs** JDK pour **un** OpenJDK. Même source → même Java : même `javac`, même `java`, même bytecode, même HotSpot. Un `.class` compilé avec l'un s'exécute avec l'autre.
+
+Ce qui **change** :
+
+- **qui** a fabriqué le dossier (`java -version` l'affiche)
+- la **licence** : le droit de l'utiliser, surtout une fois en production
+- **combien de temps** ce vendeur publie des correctifs
+
+Vendeurs :
+
+- **Oracle JDK** : kit d'Oracle (Oracle a racheté Sun, le créateur de Java). Même base OpenJDK / HotSpot. La licence n'est **pas** toujours gratuite en production : il faut la lire.
+- **Eclipse Temurin** : kit de la fondation Eclipse (projet *Adoptium*). Même OpenJDK. Gratuit, y compris en production. C'est souvent celui qu'on prend si on ne veut pas Oracle.
+- **Amazon Corretto** : kit d'Amazon. Même OpenJDK. Courant sur les machines Amazon.
+- D'autres suivent le même principe : Microsoft, Azul Zulu, Red Hat, etc.
+
+Tu choisis un vendeur, tu installes **son** JDK. Ce n'est pas un autre langage.
+
+Ce JDK, c'est le Java du PC et du serveur. Java se coupe aussi selon l'**usage**. Ces coupes s'appellent des **éditions**. Section suivante.
