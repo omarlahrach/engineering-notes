@@ -39,4 +39,4 @@ Les tests automatisés permettent de rejouer les comportements déjà vérifiés
 
 Un test ne prouve pas que le programme ne contient aucun bug. Il vérifie uniquement les cas qui ont été décrits. Les tests eux-mêmes peuvent également être incomplets ou incorrects.
 
-Un framework de test fournit un format pour déclarer les cas, les découvrir, les exécuter et comparer leurs résultats. Dans l'écosystème Java, le framework standard pour ce rôle est JUnit. Section suivante.
+Un framework de test fournit un format pour déclarer les cas, les découvrir, les exécuter et comparer leurs résultats. Dans l'écosystème Java, le framework standard pour ce rôle est JUnit.
