@@ -167,3 +167,17 @@ Vendeurs :
 Tu choisis un vendeur, tu installes **son** JDK. Ce n'est pas un autre langage.
 
 Ce JDK, c'est le Java du PC et du serveur. Java se coupe aussi selon l'**usage**. Ces coupes s'appellent des **éditions**. Section suivante.
+
+## Éditions
+
+Une **édition**, c'est **pour quel usage** : quelles bibliothèques sont dans le kit.
+
+**Sun** a créé Java, puis l'a coupé en **trois** éditions. Voici les trois, et **qui les tient** aujourd'hui.
+
+- **Java SE** (*Standard Edition*) : PC et serveur. Langage, JVM, bibliothèques de base. OpenJDK est le source de **cette** édition. Les vendeurs livrent un JDK **SE**. C'est ce qu'on utilise. **Maintenant : Oracle** (il a racheté Sun).
+- **Java EE** (*Enterprise Edition*) : serveurs, **en plus** de SE. Pas un OpenJDK : tu gardes un JDK SE, tu ajoutes des bibliothèques **dessus**. **Maintenant : la fondation Eclipse**, sous le nom **Jakarta EE**. Oracle lui a donné EE. On verra ça plus tard.
+- **Java ME** (*Micro Edition*) : petits appareils. Autre kit, pas OpenJDK. **Maintenant : encore Oracle**. La ligne n'est plus vraiment développée. On n'en a pas besoin.
+
+Eclipse a **deux** rôles : Temurin = un JDK **SE** ; Jakarta EE = les bibliothèques **serveur**. Ce n'est pas le même produit.
+
+On installe un JDK **SE**. Ce SE n'est pas figé : le langage, la JVM, les bibliothèques avancent. Chaque étape a un **numéro**. Ça s'appelle une **version**. Section suivante.
