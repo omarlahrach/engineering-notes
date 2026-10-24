@@ -101,3 +101,23 @@ Mécanisme :
 La stack a une **taille fixe** (`-Xss`, souvent ~1 Mo). Chaque frame prend un morceau de cette taille. S'il y a trop d'appels imbriqués (ex. une méthode qui s'appelle elle-même sans fin), les frames dépassent cette taille. La JVM lance `StackOverflowError`.
 
 Il y a **une** stack par **fil d'exécution**. Ce fil s'appelle un *thread*. Section suivante.
+
+## Thread
+
+Un *thread* (en français : **fil d'exécution**) est ce que le cpu exécute **dans** un processus. Le processus, c'est la boîte (PID, ram). Le thread, c'est le fil qui avance dans le code.
+
+Un processus commence avec un thread : `main`. La JVM en crée d'autres dans **le même** PID : GC, JIT (C1, C2), etc.
+
+Tous les threads du processus **partagent le tas**. Ils ne partagent **pas** la stack : **une stack par thread** (donc un `-Xss` par thread). D'où le coût : 200 threads ≈ 200 Mo de stacks si `-Xss` vaut 1 Mo, **en plus** du tas (`-Xmx`).
+
+Le noyau place les threads sur les cœurs du cpu. Deux cœurs : deux threads peuvent **calculer au même instant**. Plafond = nombre de cœurs (`nproc`). Ça, c'est le **parallèle**.
+
+S'il y a plus de threads que de cœurs, le noyau les fait tourner **à tour de rôle**. Un seul cœur avance plusieurs threads, mais pas au même instant : il commute. Plusieurs travaux sont **en cours**, sans être tous en train de calculer. Ça, c'est la **concurrence**.
+
+Un thread qui attend (I/O) ne prend pas le cpu : le noyau peut donner le cœur à un autre thread. D'où l'intérêt d'avoir **plusieurs** threads même avec **peu** de cœurs, si le travail attend souvent.
+
+Un thread Java **plateforme** = un thread Linux. Le PID est celui du processus. Le thread Linux a son propre id (`nid` dans un dump).
+
+Java 8 jusqu'à Java 20 : c'est ce modèle. Java 21 jusqu'à Java 25 : les *virtual threads* existent (beaucoup de threads Java sur peu de threads Linux). On ne les détaille pas ici.
+
+Le processus JVM, c'est le programme `java` une fois lancé par le noyau : `main`, GC, JIT, tas, stacks. `java` est un fichier sur le disque. Il n'arrive pas tout seul : il est livré dans le JDK, avec le compilateur `javac` et d'autres outils.
