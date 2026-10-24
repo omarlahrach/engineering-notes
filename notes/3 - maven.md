@@ -127,3 +127,45 @@ La commande `mvn deploy` publie l'artefact dans un dépôt distant partagé.
 `mvn package` conserve le dossier `target` existant. `mvn clean package` le supprime avant de tout reconstruire. Un build propre est particulièrement utile après la suppression ou le déplacement de sources et dans les environnements d'intégration continue.
 
 Une phase définit un moment du build, mais elle ne réalise pas elle-même le travail. Les actions concrètes sont fournies par les objectifs de plugins attachés à cette phase. Section suivante.
+
+## Plugin
+
+Maven fournit le moteur du build, mais les actions concrètes sont réalisées par des plugins.
+
+Un plugin est un JAR contenant un ou plusieurs objectifs, appelés *goals*. Chaque objectif représente une action précise.
+
+Exemples :
+
+- `clean:clean` supprime le dossier de build ;
+- `resources:resources` copie les ressources principales ;
+- `compiler:compile` compile les sources principales ;
+- `compiler:testCompile` compile les tests ;
+- `surefire:test` exécute les tests unitaires ;
+- `jar:jar` construit un JAR.
+
+Une phase et un objectif ne sont pas la même chose.
+
+Une phase indique **quand** une action doit avoir lieu. Un objectif indique **quelle** action doit être exécutée.
+
+Pour un projet dont le packaging est `jar`, Maven attache par défaut certains objectifs aux phases :
+
+- `process-resources` → `resources:resources` ;
+- `compile` → `compiler:compile` ;
+- `process-test-resources` → `resources:testResources` ;
+- `test-compile` → `compiler:testCompile` ;
+- `test` → `surefire:test` ;
+- `package` → `jar:jar`.
+
+Une phase peut n'avoir aucun objectif, ou en recevoir plusieurs. Un plugin peut également attacher ses objectifs à de nouvelles phases.
+
+Un objectif peut être lancé directement avec une commande comme `mvn compiler:compile`. En pratique, on préfère généralement demander une phase comme `mvn compile`, afin que Maven exécute aussi toutes les étapes précédentes nécessaires.
+
+Les plugins du projet sont configurés dans la section `build` puis `plugins` du POM.
+
+Comme un projet, un plugin possède un `groupId`, un `artifactId` et une `version`. Fixer explicitement sa version améliore la reproductibilité : les développeurs et la CI utilisent alors le même outil.
+
+La section `configuration` transmet des paramètres au plugin. Le plugin JAR peut par exemple recevoir le nom de la classe principale à écrire dans le manifeste.
+
+Maven n'intègre pas tous les plugins dans son installation. Il les télécharge selon les besoins, ce qui leur permet d'évoluer indépendamment du moteur Maven.
+
+Pour télécharger un plugin, Maven doit savoir où le chercher et où le conserver localement. C'est le rôle des dépôts. Section suivante.
