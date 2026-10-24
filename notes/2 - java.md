@@ -237,3 +237,17 @@ Java 25 autorise aussi les *compact source files*. La classe peut ne pas être �
 Depuis Java 11, `java Nom.java` peut compiler et lancer directement un source simple. Cette forme masque le fichier `.class` intermédiaire. Dans un projet, compilation et lancement restent généralement deux étapes séparées, pilotées plus tard par un outil de build.
 
 Dans un programme simple, le processus se termine après `main`. Plus précisément, la JVM reste vivante tant qu'au moins un thread non-*daemon* tourne.
+
+## Package
+
+Un *package* regroupe des types Java sous un espace de noms. Il évite les collisions entre des classes qui portent le même nom et organise une application en ensembles cohérents.
+
+Le nom complet d'une classe combine son package et son nom. La JVM utilise ce nom complet pour retrouver son fichier `.class`.
+
+Après compilation, l'arborescence des `.class` reproduit celle des packages. Le *classpath* ne pointe pas directement vers le package : il pointe vers la racine à partir de laquelle cette arborescence commence.
+
+Le package non nommé convient aux programmes simples. Une application structurée utilise des packages nommés.
+
+Avec plusieurs sources, `javac` doit connaître chaque fichier à compiler et produit une arborescence de `.class` correspondant aux packages.
+
+Déplacer ou livrer tous ces fichiers séparément n'est pas pratique. Java permet de les regrouper dans une seule archive : le JAR. Section suivante.
