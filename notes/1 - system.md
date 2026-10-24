@@ -18,3 +18,9 @@ Le matériel — cpu, ram, disque, réseau — n'est accessible que via le noyau
 Seul le noyau accède au cpu, à la ram, au disque et au réseau. Tout autre accès passe par un *appel système* : une demande adressée au noyau.
 
 Ce que le noyau lance, c'est un programme sur le disque.
+
+## Programme
+
+Un programme est un fichier sur le disque. Il contient des instructions destinées au cpu. Tant qu'il n'est pas exécuté, il ne consomme ni cpu ni ram.
+
+Quand le noyau l'exécute, ça devient un processus.
