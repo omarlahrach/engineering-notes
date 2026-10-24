@@ -21,3 +21,13 @@ Le bytecode est le format produit par le compilateur. Sur le disque, c'est un fi
 Ce n'est plus du source. Ce n'est pas des instructions cpu : un cpu x86 et un cpu ARM n'ont pas les mêmes instructions. Le compilateur ne vise donc pas une machine. Il vise un format unique, le bytecode.
 
 C'est ça qui rend Java portable : le même fichier `.class` peut être copié sur une autre machine, un autre cpu. Le noyau ne peut toujours pas le lancer tout seul. Sur chaque machine, c'est la JVM qui lit ce bytecode.
+
+## JVM
+
+La JVM (*Java Virtual Machine*) est le processus qui exécute le bytecode. Le programme sur le disque s'appelle `java`. Une fois lancé par le noyau, c'est un processus comme les autres : PID, ram isolée, cpu. *Virtual* ici : elle exécute du bytecode ; ce n'est pas un second ordinateur dans l'ordinateur.
+
+Le cpu de *cette* machine ne lit pas le bytecode. Ce qui s'exécute sur le cpu, ce sont toujours des instructions cpu. La JVM passe par le noyau (appels système) pour la ram, le disque et le réseau. D'où la portabilité : le bytecode est le même partout ; la JVM, elle, est faite pour la machine où elle tourne (Linux, tel cpu, etc.).
+
+La JVM la plus courante s'appelle HotSpot. Dans le même processus, elle a un interpréteur et deux compilateurs JIT.
+
+Comment l'interpréteur et les compilateurs JIT s'enchaînent : section suivante.
