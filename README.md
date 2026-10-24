@@ -41,7 +41,7 @@ Les notes restent générales, concises et adaptées aux révisions d’entretie
 - `base :` PostgreSQL, Liquibase, Redis, pgvector
 - `stockage :` S3, MinIO
 - `sécurité :` OAuth 2.0, OpenID Connect, JWT, SSO, Vault
-- `tests :` JUnit 5, Mockito, Testcontainers, WireMock, Gatling, SonarQube
+- `tests :` JUnit 6, Mockito, Testcontainers, WireMock, Gatling, SonarQube
 - `ia :` OCR, Spring AI, API LLM, embeddings, RAG, évaluation
 - `data :` Python, traitements batch et streaming
 - `cloud :` AWS, IAM, VPC, S3, RDS, EKS, MSK
@@ -55,7 +55,7 @@ Les notes restent générales, concises et adaptées aux révisions d’entretie
 2. Java
 3. Classes, packages, classpath et JAR
 4. Maven
-5. Logique métier et JUnit 5
+5. Logique métier et JUnit 6
 6. HTTP
 7. Spring Boot et monolithe modulaire
 8. REST et OpenAPI
