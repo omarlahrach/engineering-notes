@@ -231,3 +231,99 @@ La commande `mvn dependency:tree` affiche les dépendances directes, les dépend
 Une dépendance fournit du code utilisé par le projet. Un plugin fournit une action utilisée pour construire le projet. Les deux sont des artefacts récupérés depuis des dépôts, mais ils n'ont pas le même rôle.
 
 Toutes les dépendances ne doivent pas être disponibles pendant toutes les étapes. Maven utilise leur *scope* pour déterminer les classpaths auxquels elles appartiennent. Section suivante.
+
+## Scope
+
+Le *scope* indique dans quels classpaths Maven place une dépendance.
+
+Maven distingue principalement :
+
+- la compilation du code principal ;
+- la compilation et l'exécution des tests ;
+- l'exécution de l'application ;
+- la transmission de la dépendance aux projets consommateurs.
+
+Une dépendance transitive est une dépendance reçue indirectement à travers un autre artefact.
+
+### compile
+
+- Compilation principale : oui
+- Tests : oui
+- Exécution : oui
+- Transitive : oui
+- Usage : bibliothèque utilisée directement par l'application
+- Exemple : bibliothèque JSON
+
+`compile` est le scope par défaut. Il peut être omis dans le POM.
+
+### test
+
+- Compilation principale : non
+- Tests : oui
+- Exécution : non
+- Transitive : non
+- Usage : code nécessaire uniquement pour vérifier l'application
+- Exemple : JUnit
+
+Une dépendance `test` ne peut pas être importée par le code de `src/main/java` et n'est pas livrée avec l'application.
+
+### runtime
+
+- Compilation principale : non
+- Tests : oui
+- Exécution : oui
+- Transitive : oui
+- Usage : implémentation nécessaire uniquement lorsque l'application tourne
+- Exemple : driver PostgreSQL lorsque le code compile contre l'API JDBC
+
+Le code principal ne peut pas importer directement une classe disponible uniquement avec le scope `runtime`.
+
+### provided
+
+- Compilation principale : oui
+- Tests : oui
+- Exécution : non
+- Transitive : non
+- Usage : API nécessaire pour compiler, mais fournie en production par l'environnement
+- Exemple : API Servlet fournie par un serveur externe
+
+La différence avec `runtime` est inversée :
+
+- `runtime` : absent à la compilation, présent à l'exécution ;
+- `provided` : présent à la compilation, absent à l'exécution.
+
+### system
+
+- Compilation principale : oui
+- Tests : oui
+- Exécution : non
+- Transitive : non
+- Source : chemin local explicite vers un JAR
+- Usage : cas exceptionnel, généralement à éviter
+
+`system` rend le build dépendant des fichiers présents sur une machine et contourne les dépôts Maven.
+
+### import
+
+- Compilation principale : non applicable
+- Tests : non applicable
+- Exécution : non applicable
+- Transitive : non applicable
+- Usage : importer les versions gérées par un BOM
+
+`import` s'utilise uniquement avec un POM déclaré dans `dependencyManagement`. Il n'ajoute pas directement une bibliothèque au classpath.
+
+### Artefact
+
+Le scope contrôle les classpaths, pas le contenu physique du JAR produit.
+
+Un JAR Maven classique contient les classes et ressources du projet, mais pas les JAR de ses dépendances. Un plugin supplémentaire est nécessaire pour construire une archive qui les regroupe.
+
+### Résumé
+
+- `compile` : partout ;
+- `test` : tests uniquement ;
+- `runtime` : exécution, mais pas compilation principale ;
+- `provided` : compilation, mais pas exécution ;
+- `system` : JAR local à éviter ;
+- `import` : versions d'un BOM.
