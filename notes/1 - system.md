@@ -10,3 +10,11 @@ Une machine, c'est un ordinateur : ton PC, ou un serveur. Elle a toujours quatre
 - `réseau :` il permet de parler aux autres machines, et c'est le plus lent des quatre
 
 Ce matériel n'est pas utilisé directement : c'est le rôle du noyau.
+
+## Noyau
+
+Le matériel — cpu, ram, disque, réseau — n'est accessible que via le noyau (*kernel*). Ici, c'est Linux.
+
+Seul le noyau accède au cpu, à la ram, au disque et au réseau. Tout autre accès passe par un *appel système* : une demande adressée au noyau.
+
+Ce que le noyau lance, c'est un programme sur le disque.
