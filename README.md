@@ -53,34 +53,38 @@ Les notes restent générales, concises et adaptées aux révisions d’entretie
 
 1. Système
 2. Java
-3. Classes, packages et classpath
+3. Classes, packages, classpath et JAR
 4. Maven
-5. Spring Boot
+5. Logique métier et JUnit 5
 6. HTTP
-7. REST et OpenAPI
-8. Tests
-9. Angular
-10. PostgreSQL et JDBC
-11. Liquibase
-12. JPA et Spring Data JPA
-13. MinIO
-14. Sécurité
-15. Python et OCR
-16. Kafka
-17. Spring AI et LLM
-18. Embeddings, pgvector et RAG
-19. Évaluation de l’IA
-20. Caffeine et Redis
-21. Resilience4j
-22. Observabilité
-23. Performance
-24. Docker
-25. GitHub Actions, SonarQube et JFrog
-26. Architecture événementielle
-27. Microservices
-28. Terraform et AWS
-29. Kubernetes et EKS
-30. MSK, RDS, ArgoCD et Vault
+7. Spring Boot et monolithe modulaire
+8. REST et OpenAPI
+9. Mockito
+10. Angular
+11. Docker
+12. PostgreSQL et JDBC
+13. Liquibase
+14. JPA et Spring Data JPA
+15. Testcontainers
+16. MinIO
+17. Spring Security, OAuth 2.0, OpenID Connect et JWT
+18. Python et OCR
+19. WireMock
+20. Kafka et traitement asynchrone
+21. Spring AI et API LLM
+22. Embeddings, pgvector et RAG
+23. Évaluation de l’IA
+24. Caffeine et Redis
+25. Resilience4j
+26. OpenTelemetry, Prometheus, Grafana, Elasticsearch et Kibana
+27. Gatling et performance
+28. GitHub Actions, SonarQube et JFrog
+29. Architecture événementielle
+30. Microservices
+31. Terraform et AWS
+32. Kubernetes et EKS
+33. MSK et RDS
+34. ArgoCD et Vault
 
 ## Problèmes
 
