@@ -219,3 +219,21 @@ S'il y a **plusieurs** JDK sur le disque, une seule ligne `bin` gagne : la **pre
 Sans ce dossier, le noyau n'a pas de programme `java` à lancer. Pas de processus JVM.
 
 `java` et `javac` sont trouvés. Reste à s'en servir sur un fichier. Section suivante.
+
+## Lancement
+
+Un fichier source Java porte l'extension `.java`. `javac` lit ce source et produit un ou plusieurs fichiers `.class` contenant le bytecode.
+
+La commande `javac Nom.java` compile le fichier. Si elle réussit, elle ne produit généralement aucun message et écrit les `.class` sur le disque.
+
+La commande `java Nom` lance une JVM et lui demande de charger la classe `Nom`. On donne un nom de classe, sans `.java` ni `.class`.
+
+La JVM cherche cette classe dans le *classpath*. Si aucun *classpath* particulier n'est fourni, le dossier courant sert de point de départ.
+
+Une fois la classe chargée, la JVM cherche le point d'entrée `main` et l'exécute.
+
+Java 25 autorise aussi les *compact source files*. La classe peut ne pas être écrite explicitement : le compilateur crée une classe implicite à partir du nom du fichier. Cette forme convient aux petits programmes. Les applications structurées utilisent généralement des classes explicites, des packages et plusieurs fichiers.
+
+Depuis Java 11, `java Nom.java` peut compiler et lancer directement un source simple. Cette forme masque le fichier `.class` intermédiaire. Dans un projet, compilation et lancement restent généralement deux étapes séparées, pilotées plus tard par un outil de build.
+
+Dans un programme simple, le processus se termine après `main`. Plus précisément, la JVM reste vivante tant qu'au moins un thread non-*daemon* tourne.
