@@ -121,3 +121,24 @@ Un thread Java **plateforme** = un thread Linux. Le PID est celui du processus. 
 Java 8 jusqu'à Java 20 : c'est ce modèle. Java 21 jusqu'à Java 25 : les *virtual threads* existent (beaucoup de threads Java sur peu de threads Linux). On ne les détaille pas ici.
 
 Le processus JVM, c'est le programme `java` une fois lancé par le noyau : `main`, GC, JIT, tas, stacks. `java` est un fichier sur le disque. Il n'arrive pas tout seul : il est livré dans le JDK, avec le compilateur `javac` et d'autres outils.
+
+## JDK
+
+Le JDK (*Java Development Kit*) est le kit que tu **installes** sur le disque.
+
+Il contient :
+
+- `javac` : le compilateur (source → bytecode)
+- `java` : le programme qui lance la JVM
+- les bibliothèques nécessaires à l'exécution
+- d'autres programmes (outils), qu'on verra en les lançant
+
+La partie « lancer sans compiler » (`java` + bibliothèques) s'appelait le JRE. Java 8 : JRE ou JDK, deux installs. Java 9 jusqu'à Java 25 : plus de JRE à part, c'est **déjà dans** le JDK. Un seul install.
+
+Le JDK est un **dossier** sur le disque.
+
+`JAVA_HOME` est une variable : elle stocke **le chemin** de ce dossier. des outils s'en servent pour savoir **quel** JDK utiliser.
+
+`PATH` est une liste de dossiers. Le shell y cherche les commandes. Si `bin` de ce JDK y est, `java` et `javac` marchent. `java -version` affiche **celui** qui est trouvé en premier.
+
+Ce kit ne sort pas de nulle part. Il est fabriqué à partir d'un **source**. Ce source s'appelle OpenJDK. Section suivante.
