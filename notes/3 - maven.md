@@ -43,3 +43,23 @@ La section `properties` centralise des valeurs utilisées pendant le build. `mav
 Maven combine ce POM avec ses valeurs par défaut pour former le *POM effectif* réellement utilisé pendant le build.
 
 Le POM n'a pas besoin d'indiquer chaque chemin lorsque le projet respecte l'organisation standard de Maven. Cette organisation constitue la convention du projet. Section suivante.
+
+## Structure
+
+Maven applique le principe de *convention over configuration* : lorsqu'un projet respecte une organisation connue, il n'a pas besoin de déclarer chaque chemin dans le POM.
+
+Le dossier `src/main/java` contient les sources Java de l'application. `main` désigne le contenu livré avec l'application et `java` la racine des packages Java.
+
+Le dossier `src/main/resources` contient les ressources de l'application. Maven les copie dans `target/classes`, puis les inclut dans l'artefact final.
+
+Le dossier `src/test/java` contient les sources Java des tests. Maven les compile dans `target/test-classes`. Elles servent pendant le build, mais ne sont pas incluses dans le JAR de l'application.
+
+Le dossier `src/test/resources` contient les ressources utilisées uniquement par les tests.
+
+`src`, `main`, `test`, `java` et `resources` sont des dossiers Maven. Ils ne font pas partie du nom des packages Java.
+
+Le package commence sous la racine `java`. Un fichier placé sous `src/main/java/io/example/app` appartient donc au package `io.example.app`.
+
+Le dossier `target` contient tout ce que Maven génère : classes compilées, rapports de tests et artefacts. Il peut être supprimé et reconstruit, il ne doit donc pas être versionné.
+
+Cette structure indique à Maven où trouver chaque type de fichier. Reste à déterminer dans quel ordre les traiter. Cet ordre est défini par le cycle de vie. Section suivante.
