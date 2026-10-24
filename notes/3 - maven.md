@@ -203,3 +203,31 @@ La configuration globale ou utilisateur se trouve généralement dans `settings.
 En entreprise, un gestionnaire comme JFrog Artifactory peut servir d'intermédiaire entre les développeurs et Maven Central. Il centralise les artefacts internes, contrôle les téléchargements et met en cache les artefacts externes.
 
 Les plugins sont récupérés depuis ces dépôts parce qu'ils sont eux-mêmes des artefacts. Le même mécanisme permet à une application de récupérer les bibliothèques dont son code a besoin : les dépendances. Section suivante.
+
+## Dépendance
+
+Une dépendance est un artefact externe dont le projet a besoin pour être compilé, testé ou exécuté.
+
+Une bibliothèque Java est généralement distribuée sous forme de JAR. Sans Maven, il faudrait télécharger ce JAR manuellement puis l'ajouter aux différents *classpaths* de `javac` et de la JVM.
+
+Une dépendance Maven est déclarée dans la section `dependencies` du POM avec ses coordonnées :
+
+- `groupId` : organisation qui publie l'artefact ;
+- `artifactId` : nom de l'artefact ;
+- `version` : version précise demandée.
+
+Maven cherche d'abord l'artefact dans le dépôt local `.m2`. S'il est absent, il télécharge son POM et son JAR depuis un dépôt distant.
+
+Une dépendance déclarée directement dans le POM du projet est une dépendance directe.
+
+Le POM de cette dépendance peut lui-même déclarer d'autres dépendances. Maven les récupère récursivement : ce sont les dépendances transitives.
+
+Grâce aux dépendances transitives, un projet n'a pas besoin de déclarer manuellement toutes les bibliothèques internes utilisées par chaque dépendance directe.
+
+Plusieurs chemins de l'arbre peuvent demander des versions différentes du même artefact. Maven doit alors sélectionner une seule version. Par défaut, il retient généralement la déclaration la plus proche du projet dans l'arbre des dépendances.
+
+La commande `mvn dependency:tree` affiche les dépendances directes, les dépendances transitives et les versions retenues.
+
+Une dépendance fournit du code utilisé par le projet. Un plugin fournit une action utilisée pour construire le projet. Les deux sont des artefacts récupérés depuis des dépôts, mais ils n'ont pas le même rôle.
+
+Toutes les dépendances ne doivent pas être disponibles pendant toutes les étapes. Maven utilise leur *scope* pour déterminer les classpaths auxquels elles appartiennent. Section suivante.
