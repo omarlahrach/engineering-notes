@@ -51,3 +51,31 @@ Mécanisme :
 Au démarrage du processus, presque tout est encore aux étapes 2–3. D'où un début plus lent, puis ça accélère : *warmup*.
 
 Le JIT concerne le cpu. La ram du processus JVM, c'est le GC.
+
+## GC
+
+GC = *garbage collector*. En français : **ramasse-miettes**. C'est un mécanisme **dans le processus JVM**.
+
+Le *tas* (*heap*) est la zone de ram du processus où la JVM place les **objets** (les données créées avec `new`).
+
+Le GC parcourt le tas. Il trouve les objets dont plus aucune variable (ni aucun autre objet) ne pointe. Ces objets ne servent plus. **Ensuite** il rend **leur** ram, pour qu'un prochain `new` puisse la réutiliser.
+
+Tu n'as pas d'instruction Java pour vider un objet. Sans GC, le tas ne ferait que grandir.
+
+Mécanisme :
+
+1. `new` : la JVM pose l'objet dans le tas. Cette ram est prise.
+2. Tant qu'on pointe encore vers lui, il reste. Le GC ne le touche pas.
+3. Plus personne ne pointe vers lui : l'objet ne sert plus. Sa ram est encore prise.
+4. Le GC trouve ces objets et rend leur ram.
+
+Pendant l'étape 4, le cpu exécute le GC. Ton code Java ne tourne pas. On appelle ça une **pause**.
+
+La taille du tas se règle **au lancement** du processus : `-Xms` (départ), `-Xmx` (plafond). Sans ça, HotSpot choisit d'après la ram de la machine. Trop petit / trop grand = par rapport à ce que l'appli alloue.
+
+- `-Xmx` trop petit : le tas est plein trop souvent, l'étape 4 revient trop souvent, beaucoup de pauses.
+- `-Xmx` trop grand : l'étape 4 est plus rare, mais un passage peut durer plus longtemps (plus de tas à parcourir).
+
+HotSpot a plusieurs ramasse-miettes. Java 8 : *Parallel GC*. Java 9 jusqu'à Java 25 : **G1**. ZGC et Shenandoah existent, ce n'est pas le défaut. On ne les détaille pas ici.
+
+Le GC ne gère pas la *stack*. C'est une autre zone de ram du même processus. Section suivante.
