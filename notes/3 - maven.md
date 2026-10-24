@@ -169,3 +169,37 @@ La section `configuration` transmet des paramètres au plugin. Le plugin JAR peu
 Maven n'intègre pas tous les plugins dans son installation. Il les télécharge selon les besoins, ce qui leur permet d'évoluer indépendamment du moteur Maven.
 
 Pour télécharger un plugin, Maven doit savoir où le chercher et où le conserver localement. C'est le rôle des dépôts. Section suivante.
+
+## Dépôt
+
+Un dépôt Maven est un stockage d'artefacts. Il ne s'agit pas d'un dépôt Git : il contient des JAR, des POM et leurs métadonnées.
+
+Chaque artefact est identifié par ses coordonnées `groupId:artifactId:version`. Ces coordonnées déterminent également son emplacement dans le dépôt.
+
+Maven utilise d'abord le dépôt local de la machine :
+
+`C:\Users\<utilisateur>\.m2\repository`
+
+Ce dossier sert de cache et de stockage pour les artefacts installés localement. Il ne doit pas être ajouté au projet ni versionné.
+
+Lorsqu'un artefact demandé n'existe pas localement, Maven le cherche dans les dépôts distants configurés.
+
+Maven Central est le dépôt distant public utilisé par défaut. Il contient les plugins Maven et une grande partie des bibliothèques Java publiques.
+
+Au premier build, Maven télécharge les plugins nécessaires ainsi que leurs propres dépendances. Les builds suivants réutilisent les fichiers présents dans `.m2`, ce qui explique pourquoi ils sont généralement plus rapides.
+
+Maven télécharge également les POM des artefacts. Ces POM lui permettent de connaître leurs métadonnées et leurs dépendances.
+
+Une version publiée sans `SNAPSHOT` est considérée comme immuable. Maven peut donc la conserver durablement dans son cache.
+
+Une version `SNAPSHOT` peut évoluer. Maven consulte périodiquement le dépôt distant pour rechercher une version plus récente selon sa politique de mise à jour.
+
+La commande `mvn -o package` active le mode hors ligne. Maven n'utilise alors que les artefacts déjà présents dans le dépôt local et échoue si l'un d'eux manque.
+
+La commande `mvn -U package` force Maven à vérifier les mises à jour disponibles, notamment pour les snapshots.
+
+La configuration globale ou utilisateur se trouve généralement dans `settings.xml`. Elle peut définir des miroirs, des proxys, des identifiants et des dépôts d'entreprise.
+
+En entreprise, un gestionnaire comme JFrog Artifactory peut servir d'intermédiaire entre les développeurs et Maven Central. Il centralise les artefacts internes, contrôle les téléchargements et met en cache les artefacts externes.
+
+Les plugins sont récupérés depuis ces dépôts parce qu'ils sont eux-mêmes des artefacts. Le même mécanisme permet à une application de récupérer les bibliothèques dont son code a besoin : les dépendances. Section suivante.
