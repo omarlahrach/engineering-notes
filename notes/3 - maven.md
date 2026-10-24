@@ -63,3 +63,67 @@ Le package commence sous la racine `java`. Un fichier placé sous `src/main/java
 Le dossier `target` contient tout ce que Maven génère : classes compilées, rapports de tests et artefacts. Il peut être supprimé et reconstruit, il ne doit donc pas être versionné.
 
 Cette structure indique à Maven où trouver chaque type de fichier. Reste à déterminer dans quel ordre les traiter. Cet ordre est défini par le cycle de vie. Section suivante.
+
+## Cycle
+
+Maven organise le build en cycles de vie. Un cycle est une suite ordonnée de phases.
+
+Une commande visant une phase exécute cette phase et toutes celles qui la précèdent dans le même cycle. `mvn package` ne lance donc pas uniquement `package` : il parcourt le cycle principal depuis `validate` jusqu'à `package`.
+
+Maven possède trois cycles intégrés :
+
+- `clean` : supprimer les résultats d'un ancien build ;
+- `default` : construire, tester et publier le projet ;
+- `site` : produire la documentation du projet.
+
+Le cycle `clean` contient notamment :
+
+- `pre-clean` : point d'extension avant le nettoyage ;
+- `clean` : supprimer le dossier de build, généralement `target` ;
+- `post-clean` : point d'extension après le nettoyage.
+
+Le cycle `default` traverse les phases suivantes :
+
+- `validate` : vérifier que le modèle du projet peut être utilisé ;
+- `initialize` : préparer des propriétés ou fichiers nécessaires au build ;
+- `generate-sources` : générer des sources supplémentaires ;
+- `process-sources` : traiter les sources avant compilation ;
+- `generate-resources` : générer des ressources ;
+- `process-resources` : copier les ressources principales dans `target/classes` ;
+- `compile` : compiler les sources principales dans `target/classes` ;
+- `process-classes` : traiter les classes principales compilées ;
+- `generate-test-sources` : générer des sources de test ;
+- `process-test-sources` : traiter les sources de test ;
+- `generate-test-resources` : générer des ressources de test ;
+- `process-test-resources` : copier les ressources de test dans `target/test-classes` ;
+- `test-compile` : compiler les tests dans `target/test-classes` ;
+- `process-test-classes` : traiter les tests compilés ;
+- `test` : exécuter les tests unitaires ;
+- `prepare-package` : préparer le contenu à empaqueter ;
+- `package` : produire l'artefact, par exemple un JAR ;
+- `pre-integration-test` : préparer l'environnement des tests d'intégration ;
+- `integration-test` : exécuter les tests d'intégration configurés ;
+- `post-integration-test` : arrêter et nettoyer leur environnement ;
+- `verify` : vérifier que l'artefact respecte les contrôles configurés ;
+- `install` : copier l'artefact et son POM dans le dépôt Maven local ;
+- `deploy` : publier l'artefact dans un dépôt Maven distant.
+
+Toutes ces phases existent, mais plusieurs ne font rien tant qu'aucun outil ne leur est attaché.
+
+La commande `mvn compile` parcourt le cycle jusqu'à la compilation principale.
+
+La commande `mvn test` compile les sources principales et les tests, puis exécute les tests unitaires.
+
+La commande `mvn package` exécute également les tests puis produit l'artefact. Elle ne lance pas l'application.
+
+La commande `mvn verify` va plus loin et exécute les contrôles configurés après l'empaquetage.
+
+La commande `mvn install` ajoute l'artefact au dépôt local afin que d'autres projets de la machine puissent l'utiliser.
+
+La commande `mvn deploy` publie l'artefact dans un dépôt distant partagé.
+
+`clean` appartient à un cycle différent. La commande `mvn clean package` exécute d'abord le cycle `clean` jusqu'à `clean`, puis le cycle `default` jusqu'à `package`.
+
+`mvn package` conserve le dossier `target` existant. `mvn clean package` le supprime avant de tout reconstruire. Un build propre est particulièrement utile après la suppression ou le déplacement de sources et dans les environnements d'intégration continue.
+
+Une phase définit un moment du build, mais elle ne réalise pas elle-même le travail. Les actions concrètes sont fournies par les objectifs de plugins attachés à cette phase. Section suivante.
