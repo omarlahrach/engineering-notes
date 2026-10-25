@@ -119,3 +119,19 @@ TCP et UDP utilisent tous les deux une adresse et un port. Ils n’offrent pas l
 HTTP/3 s’appuie sur UDP. Il n’est pas détaillé ici.
 
 TCP et UDP placent leurs données dans un paquet IP, qui vise une machine. Section suivante.
+
+## IP
+
+IP (*Internet Protocol*) est le protocole que le noyau et les routeurs appliquent pour acheminer un paquet d’une machine à une autre.
+
+Chaque paquet porte une adresse source et une adresse destination.
+
+Le noyau examine la destination. Si elle désigne la machine locale, le paquet reste dans le noyau. Si elle appartient au réseau local, le paquet est envoyé sur ce réseau. Sinon, il est remis à un routeur, qui le transmet au routeur suivant jusqu’à la machine cible.
+
+IP est un service au mieux : un paquet peut être perdu, dupliqué ou arriver dans le désordre. IP ne prévoit pas de renvoi. TCP ajoute cette fiabilité. UDP ne l’ajoute pas.
+
+IP identifie des machines, pas des programmes. Le port appartient à TCP ou à UDP.
+
+`127.0.0.1` ne traverse aucun routeur. Internet commence lorsqu’un paquet quitte le réseau local.
+
+Les humains retiennent des noms, pas des adresses IP. Un mécanisme doit donc traduire un nom en adresse. Section suivante.
