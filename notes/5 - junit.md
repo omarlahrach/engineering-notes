@@ -126,3 +126,17 @@ La commande `mvn -Dtest=NomTest#nomMethode test` exécute une seule méthode.
 Les rapports sont écrits dans `target/surefire-reports`.
 
 La dépendance JUnit et les classes de test ne sont pas incluses dans le JAR de production.
+
+## Résultats
+
+Un test peut être :
+
+- réussi : toutes les assertions sont satisfaites ;
+- échoué : une assertion n'est pas satisfaite ;
+- en erreur : une exception inattendue interrompt le test ;
+- désactivé : `@Disabled` empêche son exécution ;
+- interrompu : une hypothèse nécessaire n'est pas satisfaite.
+
+Les hypothèses, comme `assumeTrue`, interrompent un test lorsque son environnement ne permet pas de l'exécuter correctement.
+
+Un test désactivé ne protège plus le comportement concerné. `@Disabled` doit donc rester temporaire et être accompagné d'une raison.
