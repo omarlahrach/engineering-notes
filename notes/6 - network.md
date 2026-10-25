@@ -76,3 +76,27 @@ Si aucun socket n’écoute le port demandé, le noyau refuse la connexion.
 Deux processus ne peuvent pas écouter la même adresse et le même port en même temps.
 
 Le socket transporte des octets. Il ne connaît pas le format des messages applicatifs. L’ordre, la fiabilité et la connexion de ces octets suivent le protocole de transport demandé au noyau. Section suivante.
+
+## TCP
+
+TCP (*Transmission Control Protocol*) est le protocole de transport que le noyau applique pour un flux d’octets ordonné et fiable.
+
+Une connexion TCP n’est pas un câble. C’est un accord enregistré dans les deux noyaux : ports, numéros de séquence, fenêtre.
+
+Le noyau envoie déjà des paquets isolés selon IP, sans connexion. Il utilise ces paquets pour construire ensuite l’accord TCP.
+
+Avant d’échanger des données utiles, les deux noyaux s’envoient trois paquets IP qui portent des drapeaux TCP :
+
+1. le noyau client envoie `SYN` : il propose de démarrer un échange ;
+2. le noyau serveur répond `SYN-ACK` : il accepte ;
+3. le noyau client confirme avec `ACK`.
+
+Après ces trois paquets, les deux noyaux partagent le même état. La connexion est alors établie.
+
+Si aucun processus n’écoute le port, le noyau refuse dès cette étape. Aucun message applicatif n’est envoyé.
+
+Une fois la connexion établie, le noyau numérote les octets, les remet dans l’ordre, renvoie ceux qui sont perdus et contrôle le débit.
+
+TCP ne décrit pas le format des messages applicatifs. HTTP, SSH ou d’autres protocoles s’appuient sur ce flux d’octets.
+
+UDP est l’autre protocole de transport courant : pas de connexion, pas d’ordre, pas de retransmission. Section suivante.
