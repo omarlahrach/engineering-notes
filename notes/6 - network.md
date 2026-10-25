@@ -100,3 +100,22 @@ Une fois la connexion établie, le noyau numérote les octets, les remet dans l�
 TCP ne décrit pas le format des messages applicatifs. HTTP, SSH ou d’autres protocoles s’appuient sur ce flux d’octets.
 
 UDP est l’autre protocole de transport courant : pas de connexion, pas d’ordre, pas de retransmission. Section suivante.
+
+## UDP
+
+UDP (*User Datagram Protocol*) est le protocole de transport que le noyau applique pour envoyer un datagramme : un message isolé.
+
+UDP n’ajoute pas de fiabilité à IP. Il ajoute le port, afin de viser un programme sur la machine destinataire.
+
+Le noyau n’établit pas d’accord préalable, ne remet pas les messages dans l’ordre et ne renvoie pas un datagramme perdu.
+
+UDP est plus léger que TCP : moins d’état dans le noyau et aucun handshake avant l’envoi. L’application doit gérer elle-même les pertes et les doublons si elle en a besoin.
+
+TCP et UDP utilisent tous les deux une adresse et un port. Ils n’offrent pas le même contrat.
+
+- TCP : connexion, flux ordonné, retransmission, contrôle de débit. Usage : tout doit arriver, comme une page HTTP/1.1, HTTP/2 ou une session SSH.
+- UDP : pas de connexion, datagramme isolé, pas de retransmission. Usage : un paquet tardif ne sert plus, comme la voix, la vidéo live ou la position dans un jeu. DNS l’utilise aussi parce qu’une petite question peut être renvoyée par le client.
+
+HTTP/3 s’appuie sur UDP. Il n’est pas détaillé ici.
+
+TCP et UDP placent leurs données dans un paquet IP, qui vise une machine. Section suivante.
