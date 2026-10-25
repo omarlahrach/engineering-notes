@@ -350,3 +350,27 @@ La commande `mvn verify` construit l’artefact, exécute les tests d’intégra
 Il vaut mieux demander `verify` que lancer directement `integration-test`, car les phases suivantes, notamment le nettoyage et la vérification finale, doivent également être exécutées.
 
 Failsafe est un plugin de build, pas une dépendance de l’application. Il doit être configuré dans le POM pour être attaché au cycle de vie.
+
+La configuration d’un plugin peut dépendre d’informations déjà connues par Maven, comme le dossier de build ou le nom final de l’artefact. Les recopier manuellement crée une duplication fragile. Maven expose ces informations sous forme de propriétés. Section suivante.
+
+## Propriété
+
+Une propriété Maven est une valeur nommée utilisable dans le POM avec la syntaxe `${nom}`.
+
+Une propriété peut être déclarée dans la section `properties`, provenir du modèle du projet ou être fournie à Maven au lancement.
+
+Le modèle expose notamment :
+
+- `${project.groupId}` : groupe du projet ;
+- `${project.artifactId}` : nom de l’artefact ;
+- `${project.version}` : version du projet ;
+- `${project.build.directory}` : dossier de build ;
+- `${project.build.finalName}` : nom final de l’artefact sans extension.
+
+Une valeur fournie avec `-Dnom=valeur` devient une propriété pour le build courant.
+
+Maven résout les expressions avant de transmettre la configuration au plugin.
+
+Une propriété Maven n’est pas automatiquement une propriété système Java. Le plugin doit explicitement la transmettre à la JVM pour que le code puisse la lire avec `System.getProperty`.
+
+Réutiliser les propriétés du modèle évite de dupliquer les informations du POM et conserve le build lorsque le nom ou la version du projet change.
