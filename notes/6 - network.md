@@ -48,3 +48,17 @@ IPv4 s’écrit avec quatre nombres compris entre 0 et 255, par exemple `192.168
 Une même machine peut posséder plusieurs adresses IP : une pour le Wi-Fi, une pour le câble, et toujours `127.0.0.1`. Cette dernière est la boucle locale : les paquets restent dans le noyau de la machine. `localhost` désigne cette adresse.
 
 L’adresse IP désigne la machine. Plusieurs programmes peuvent y tourner en même temps. Pour viser un programme précis, un second numéro est nécessaire : le port. Section suivante.
+
+## Port
+
+Le port identifie un programme sur une machine. L’adresse IP désigne la machine ; le port désigne le destinataire à l’intérieur de cette machine.
+
+Un port est un numéro compris entre 0 et 65535. On l’écrit après l’adresse, par exemple `127.0.0.1:8080`.
+
+Le noyau utilise ce numéro pour remettre les données au bon processus. Si aucun processus n’écoute le port demandé, la connexion est refusée.
+
+Certains ports sont réservés par convention : `80` pour HTTP, `443` pour HTTPS, `22` pour SSH. Une application peut utiliser un autre port, souvent `8080`.
+
+Le client possède aussi un port, attribué temporairement par le noyau, afin de recevoir la réponse.
+
+L’association entre un programme, une adresse et un port s’appelle un socket. Section suivante.
