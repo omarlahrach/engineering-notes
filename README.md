@@ -1,37 +1,92 @@
-
 # Notes
 
-Ce dépôt contient mes notes d’ingénierie logicielle et ma progression vers un profil senior.
+Ce dépôt est une base de connaissances durable pour maîtriser l’ingénierie logicielle, préparer les entretiens techniques et prendre de meilleures décisions en production.
 
 ## Objectif
 
-Comprendre chaque élément de ma stack depuis ses fondations, savoir expliquer son fonctionnement en entretien et l’utiliser correctement en production.
+Comprendre chaque sujet depuis ses fondations jusqu’à ses contraintes réelles :
 
-Ces notes servent de support de révision. Les expériences et le code du produit se trouvent dans le dépôt `cue`.
+- expliquer son fonctionnement sans réciter une définition ;
+- relier chaque solution au problème qu’elle résout ;
+- connaître ses limites, ses coûts et ses modes de panne ;
+- comparer les alternatives et justifier un choix ;
+- l’utiliser, le tester, l’observer et le dépanner en production.
+
+L’objectif n’est pas d’accumuler des outils, mais de développer le raisonnement attendu d’un ingénieur senior.
+
+## Principes
+
+- Les notes restent générales et indépendantes d’un projet particulier.
+- Un fichier couvre une technologie ou un grand domaine d’ingénierie.
+- Une section couvre une notion cohérente de ce sujet.
+- Chaque notion présente sa définition, son mécanisme, ses différences, ses limites et ses pièges importants.
+- Les différences sont décrites avec un pattern constant afin de faciliter les révisions.
+- Les commandes utiles sont expliquées, pas seulement listées.
+- Le code, les expériences et les mesures restent dans les projets pratiques.
+- Une explication simple ne doit jamais supprimer une notion nécessaire.
+- Aucune technologie n’est introduite uniquement parce qu’elle est populaire.
+
+## Structure
+
+Les fichiers suivent le format `numéro - sujet.md`.
+
+Le numéro conserve l’ordre dans lequel les sujets ont réellement été rencontrés. Il ne définit pas un parcours futur.
+
+Les titres de fichiers représentent les technologies ou domaines majeurs. Leurs sections décrivent les notions qui leur appartiennent.
+
+La stack représente le périmètre technique à maîtriser, pas un ordre d’introduction.
 
 ## Méthode
 
-L’apprentissage suit toujours le même cycle :
+Le prochain sujet n’est pas fixé à l’avance. Il est choisi à partir de la dernière limite concrète rencontrée pendant la pratique.
+
+Chaque fonctionnalité évolue d’une version minimale vers une version professionnelle pour le périmètre courant :
 
 1. construire une solution simple ;
 2. rencontrer une limite réelle ;
 3. observer et mesurer le problème ;
 4. comprendre sa cause ;
-5. introduire la technologie qui le résout ;
-6. provoquer une panne ;
-7. vérifier la reprise ;
-8. mesurer l’amélioration.
+5. documenter les notions nécessaires avant d’introduire la solution ;
+6. appliquer la solution minimale ;
+7. provoquer ses erreurs et ses pannes ;
+8. couvrir les cas limites pertinents ;
+9. refactorer sans modifier le comportement ;
+10. vérifier le build complet et mesurer l’amélioration.
 
-Aucune technologie n’est ajoutée uniquement parce qu’elle est populaire.
+Pour chaque comportement testable, le cycle est :
 
-## Organisation
+1. **Red** : écrire un test qui expose la limite et échoue ;
+2. **Green** : appliquer la correction minimale qui le fait réussir ;
+3. **Refactor** : améliorer le code et les tests sans changer le comportement.
 
-- `system.md` : machine, noyau, programme et processus ;
-- `java.md` : langage, compilation, JVM et exécution ;
-- `maven.md` : dépendances, build, tests et packaging ;
-- les prochains fichiers suivront l’ordre réel de construction de Cue.
+Une version professionnelle ne cherche pas la complexité maximale. Elle possède un contrat clair, maîtrise ses erreurs, couvre ses risques importants et reste compréhensible et maintenable.
 
-Les notes restent générales, concises et adaptées aux révisions d’entretien. Le code et les expérimentations restent dans le projet.
+## Qualité
+
+Un sujet n’est terminé que lorsque :
+
+- le besoin ou la limite a été observé concrètement ;
+- la cause peut être expliquée clairement ;
+- le comportement attendu possède un contrat explicite ;
+- les cas nominaux, les erreurs et les cas limites pertinents sont vérifiés ;
+- les tests utiles sont automatisés et déterministes ;
+- le build complet réussit depuis un état propre ;
+- les compromis, limites et risques sont compris ;
+- les notes sont générales, exactes et utilisables en entretien ;
+- aucune complexité sans besoin réel n’a été ajoutée.
+
+## Git
+
+- Une section de notes produit un commit cohérent.
+- Une fonctionnalité regroupe son comportement, ses tests et sa configuration nécessaire.
+- `amend` corrige uniquement une erreur accidentelle du dernier commit lorsqu’il n’est pas utile de conserver cet état.
+- Chaque évolution fonctionnelle stable et vérifiée produit un nouveau commit afin de conserver l’historique du projet.
+- Les fichiers générés ne sont pas versionnés.
+- Le build et les tests sont validés avant chaque commit de code.
+- Les messages des notes suivent le format `sujet: notion`.
+- Les projets utilisent les préfixes `feat`, `fix`, `refactor`, `test`, `build` et `docs`.
+- Un historique partagé n’est jamais réécrit sans coordination.
+- Lorsqu’une branche personnelle doit être réécrite, `--force-with-lease` est utilisé à la place de `--force`.
 
 ## Stack
 
@@ -49,65 +104,34 @@ Les notes restent générales, concises et adaptées aux révisions d’entretie
 - `livraison :` GitHub Actions, ArgoCD, JFrog
 - `observabilité :` OpenTelemetry, Prometheus, Grafana, Elasticsearch, Kibana
 
-## Parcours
-
-1. Système
-2. Java
-3. Classes, packages, classpath et JAR
-4. Maven
-5. Logique métier et JUnit 6
-6. HTTP
-7. Spring Boot et monolithe modulaire
-8. REST et OpenAPI
-9. Mockito
-10. Angular
-11. Docker
-12. PostgreSQL et JDBC
-13. Liquibase
-14. JPA et Spring Data JPA
-15. Testcontainers
-16. MinIO
-17. Spring Security, OAuth 2.0, OpenID Connect et JWT
-18. Python et OCR
-19. WireMock
-20. Kafka et traitement asynchrone
-21. Spring AI et API LLM
-22. Embeddings, pgvector et RAG
-23. Évaluation de l’IA
-24. Caffeine et Redis
-25. Resilience4j
-26. OpenTelemetry, Prometheus, Grafana, Elasticsearch et Kibana
-27. Gatling et performance
-28. GitHub Actions, SonarQube et JFrog
-29. Architecture événementielle
-30. Microservices
-31. Terraform et AWS
-32. Kubernetes et EKS
-33. MSK et RDS
-34. ArgoCD et Vault
-
 ## Problèmes
 
-Le parcours devra notamment couvrir :
+La pratique devra notamment couvrir :
 
 - débit et latence ;
 - consommation CPU et RAM ;
 - saturation de la JVM et pauses GC ;
 - concurrence et parallélisme ;
+- contention, interblocages et épuisement des threads ;
 - uploads volumineux ou interrompus ;
 - traitements OCR lents ;
 - fournisseurs externes indisponibles ;
 - erreurs et hallucinations de l’IA ;
-- idempotence et rejeu des messages ;
+- doublons, idempotence, ordre et rejeu des messages ;
 - saturation des connexions PostgreSQL ;
+- transactions concurrentes et cohérence des données ;
 - cohérence du cache ;
 - isolation des utilisateurs ;
 - authentification et autorisation ;
+- gestion des secrets ;
 - rate limiting ;
 - load balancing ;
 - circuit breakers ;
 - pics de trafic ;
+- pannes partielles et reprise ;
+- logs, métriques, traces et alertes ;
 - déploiements défectueux ;
 - rollback ;
 - sauvegarde et restauration ;
-- coûts cloud et IA.
+- reprise après sinistre ;
+- coûts du cloud et de l’IA.
