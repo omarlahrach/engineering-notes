@@ -33,3 +33,18 @@ Les données ne circulent pas comme un seul bloc. Elles sont découpées en paqu
 Un réseau local relie des machines proches, par exemple celles d’un appartement ou d’un bureau. Internet est l’interconnexion de beaucoup de ces réseaux.
 
 Sur un réseau, chaque machine doit encore posséder une adresse afin que les paquets lui parviennent. Section suivante.
+
+## Adresse
+
+Une adresse identifie une machine sur le réseau afin que les paquets lui soient destinés.
+
+Deux adresses coexistent :
+
+- l’adresse **MAC** identifie une carte réseau sur le réseau local ;
+- l’adresse **IP** identifie une machine pour acheminer les paquets d’un réseau à un autre.
+
+IPv4 s’écrit avec quatre nombres compris entre 0 et 255, par exemple `192.168.1.24`.
+
+Une même machine peut posséder plusieurs adresses IP : une pour le Wi-Fi, une pour le câble, et toujours `127.0.0.1`. Cette dernière est la boucle locale : les paquets restent dans le noyau de la machine. `localhost` désigne cette adresse.
+
+L’adresse IP désigne la machine. Plusieurs programmes peuvent y tourner en même temps. Pour viser un programme précis, un second numéro est nécessaire : le port. Section suivante.
