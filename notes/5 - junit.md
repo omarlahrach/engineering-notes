@@ -140,3 +140,11 @@ Un test peut être :
 Les hypothèses, comme `assumeTrue`, interrompent un test lorsque son environnement ne permet pas de l'exécuter correctement.
 
 Un test désactivé ne protège plus le comportement concerné. `@Disabled` doit donc rester temporaire et être accompagné d'une raison.
+
+## Limite
+
+JUnit fournit le modèle de test, les assertions, le cycle d'exécution et le système d'extensions.
+
+JUnit ne remplace pas automatiquement les collaborateurs d'une unité et ne simule pas ses dépendances. Ce besoin sera traité avec Mockito lorsqu'une unité dépendra d'autres composants.
+
+JUnit ne démarre pas non plus automatiquement une application, une base de données ou un serveur externe. Ces besoins relèvent de tests d'intégration et d'outils spécialisés.
