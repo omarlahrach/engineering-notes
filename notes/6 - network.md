@@ -62,3 +62,17 @@ Certains ports sont réservés par convention : `80` pour HTTP, `443` pour HTTPS
 Le client possède aussi un port, attribué temporairement par le noyau, afin de recevoir la réponse.
 
 L’association entre un programme, une adresse et un port s’appelle un socket. Section suivante.
+
+## Socket
+
+Un socket est le point d’accès d’un programme au réseau. Il associe un processus, une adresse et un port. Le programme l’utilise pour demander au noyau d’envoyer ou de recevoir des données.
+
+Un serveur ouvre un socket, l’associe à une adresse et à un port, puis se met en écoute. Lorsqu’un client se connecte, le noyau crée un second socket dédié à cet échange.
+
+Un client ouvre un socket puis demande une connexion vers l’adresse et le port du serveur.
+
+Si aucun socket n’écoute le port demandé, le noyau refuse la connexion.
+
+Deux processus ne peuvent pas écouter la même adresse et le même port en même temps.
+
+Le socket transporte des octets. Il ne connaît pas le format des messages applicatifs. L’ordre, la fiabilité et la connexion de ces octets suivent le protocole de transport demandé au noyau. Section suivante.
