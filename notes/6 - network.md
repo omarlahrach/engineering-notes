@@ -135,3 +135,17 @@ IP identifie des machines, pas des programmes. Le port appartient à TCP ou à U
 `127.0.0.1` ne traverse aucun routeur. Internet commence lorsqu’un paquet quitte le réseau local.
 
 Les humains retiennent des noms, pas des adresses IP. Un mécanisme doit donc traduire un nom en adresse. Section suivante.
+
+## DNS
+
+DNS (*Domain Name System*) traduit un nom de machine en adresse IP. Les programmes et les humains utilisent des noms ; IP n’achemine que des adresses.
+
+Le PC envoie généralement une question à un résolveur déjà connu, souvent la box, en UDP vers le port 53. S’il a la réponse, il la renvoie. Sinon, il interroge d’autres serveurs DNS, puis répond par une ou plusieurs adresses IP.
+
+Si la réponse ne revient pas, le client renvoie la question.
+
+`localhost` est résolu localement vers `127.0.0.1`. Cette traduction n’emprunte pas Internet.
+
+Le nom n’est pas une adresse. Tant qu’aucune IP n’a été obtenue, aucun paquet applicatif ne peut être acheminé vers cette machine.
+
+Une fois l’adresse, le port et le transport connus, les programmes peuvent échanger des messages selon un format commun. HTTP est l’un de ces formats. Section suivante.
