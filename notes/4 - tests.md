@@ -39,4 +39,22 @@ Les tests automatisés permettent de rejouer les comportements déjà vérifiés
 
 Un test ne prouve pas que le programme ne contient aucun bug. Il vérifie uniquement les cas qui ont été décrits. Les tests eux-mêmes peuvent également être incomplets ou incorrects.
 
-Un framework de test fournit un format pour déclarer les cas, les découvrir, les exécuter et comparer leurs résultats. Dans l'écosystème Java, le framework standard pour ce rôle est JUnit.
+Le test unitaire protège une règle isolée. Il ne vérifie pas que plusieurs composants, leur configuration et leurs entrées-sorties fonctionnent correctement ensemble. C’est le rôle du test d’intégration. Section suivante.
+
+## Intégration
+
+Un test d’intégration vérifie que plusieurs composants réels collaborent correctement.
+
+Contrairement au test unitaire, il conserve une partie de l’assemblage réel : plusieurs classes, une configuration, un système de fichiers, un réseau ou une base de données.
+
+Il détecte notamment les erreurs de branchement, de configuration, de sérialisation, de requête et d’échange avec les entrées-sorties.
+
+Son périmètre doit rester explicite. Les composants situés dans ce périmètre sont réels ; les systèmes externes qui n’en font pas partie peuvent rester contrôlés ou remplacés.
+
+Un test d’intégration ne couvre pas nécessairement tout le système. Un test de bout en bout traverse l’application depuis une interface publique jusqu’à ses dépendances et vérifie un parcours complet.
+
+Plus un test couvre de composants, plus il est réaliste, mais aussi plus il est lent, fragile et difficile à diagnostiquer.
+
+Une stratégie équilibrée utilise beaucoup de tests unitaires, moins de tests d’intégration autour des frontières importantes et quelques tests de bout en bout pour les parcours critiques.
+
+L’automatisation de ces tests nécessite un modèle pour les déclarer, les découvrir et les exécuter. Dans l’écosystème Java, ce modèle est fourni par JUnit.
