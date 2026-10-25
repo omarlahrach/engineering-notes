@@ -327,3 +327,26 @@ Un JAR Maven classique contient les classes et ressources du projet, mais pas le
 - `provided` : compilation, mais pas exécution ;
 - `system` : JAR local à éviter ;
 - `import` : versions d'un BOM.
+
+Le scope organise la disponibilité des dépendances, mais il ne détermine pas le moment où chaque catégorie de tests s’exécute.
+
+Les tests unitaires peuvent fonctionner avant la création de l’artefact. Un test nécessitant le JAR construit doit, lui, s’exécuter après la phase `package`. Maven utilise un plugin distinct pour ce besoin. Section suivante.
+
+## Failsafe
+
+Surefire exécute les tests unitaires pendant la phase `test`, avant la création de l’artefact.
+
+Failsafe exécute les tests d’intégration plus tard dans le cycle de vie :
+
+- l’objectif `integration-test` exécute les tests après `package` ;
+- l’objectif `verify` vérifie leurs résultats et fait échouer le build si nécessaire.
+
+Par convention, Failsafe découvre notamment les classes nommées `IT*`, `*IT` ou `*ITCase`. Surefire découvre principalement les classes nommées `Test*`, `*Test`, `*Tests` ou `*TestCase`.
+
+La commande `mvn test` s’arrête avant la construction du JAR et n’exécute pas Failsafe.
+
+La commande `mvn verify` construit l’artefact, exécute les tests d’intégration, effectue les nettoyages configurés puis vérifie leurs résultats.
+
+Il vaut mieux demander `verify` que lancer directement `integration-test`, car les phases suivantes, notamment le nettoyage et la vérification finale, doivent également être exécutées.
+
+Failsafe est un plugin de build, pas une dépendance de l’application. Il doit être configuré dans le POM pour être attaché au cycle de vie.
