@@ -86,3 +86,65 @@ Sources courantes :
 - `@EnumSource` : valeurs provenant d'une énumération.
 
 Chaque jeu de données constitue une exécution distincte du test et possède son propre résultat.
+
+## Extension
+
+Le modèle d'extensions permet d'ajouter un comportement autour de l'exécution des tests sans modifier JUnit.
+
+Une extension peut notamment :
+
+- préparer ou nettoyer un environnement ;
+- injecter des paramètres ;
+- contrôler l'activation d'un test ;
+- intercepter son exécution ;
+- réagir à son résultat.
+
+`@ExtendWith` attache une extension à une classe ou une méthode de test.
+
+Des outils comme Mockito et Spring fournissent leurs propres extensions pour s'intégrer à JUnit Jupiter.
+
+## Maven
+
+JUnit n'est pas livré dans le JDK. L'artefact `junit-jupiter` doit être déclaré comme dépendance Maven avec le scope `test`.
+
+Cet artefact regroupe notamment l'API Jupiter, les tests paramétrés et le moteur Jupiter.
+
+Le plugin Maven Surefire exécute les tests unitaires pendant la phase `test`.
+
+La commande `mvn test` :
+
+1. compile le code principal ;
+2. compile les tests ;
+3. lance Surefire ;
+4. Surefire utilise JUnit Platform ;
+5. le moteur Jupiter découvre et exécute les tests.
+
+La commande `mvn -Dtest=NomTest test` exécute une seule classe.
+
+La commande `mvn -Dtest=NomTest#nomMethode test` exécute une seule méthode.
+
+Les rapports sont écrits dans `target/surefire-reports`.
+
+La dépendance JUnit et les classes de test ne sont pas incluses dans le JAR de production.
+
+## Résultats
+
+Un test peut être :
+
+- réussi : toutes les assertions sont satisfaites ;
+- échoué : une assertion n'est pas satisfaite ;
+- en erreur : une exception inattendue interrompt le test ;
+- désactivé : `@Disabled` empêche son exécution ;
+- interrompu : une hypothèse nécessaire n'est pas satisfaite.
+
+Les hypothèses, comme `assumeTrue`, interrompent un test lorsque son environnement ne permet pas de l'exécuter correctement.
+
+Un test désactivé ne protège plus le comportement concerné. `@Disabled` doit donc rester temporaire et être accompagné d'une raison.
+
+## Limite
+
+JUnit fournit le modèle de test, les assertions, le cycle d'exécution et le système d'extensions.
+
+JUnit ne remplace pas automatiquement les collaborateurs d'une unité et ne simule pas ses dépendances. Ce besoin sera traité avec Mockito lorsqu'une unité dépendra d'autres composants.
+
+JUnit ne démarre pas non plus automatiquement une application, une base de données ou un serveur externe. Ces besoins relèvent de tests d'intégration et d'outils spécialisés.
