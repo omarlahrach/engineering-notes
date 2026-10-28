@@ -69,3 +69,45 @@ Le corps contient les données utiles, par exemple le texte d’un document.
 Une requête peut n’avoir aucun corps, notamment un `GET`.
 
 Le serveur répond avec un message de même famille. Section suivante.
+
+## Réponse
+
+Une réponse HTTP est le message renvoyé par le serveur dans la même connexion TCP.
+
+Elle contient trois parties, dans cet ordre :
+
+1. la ligne de statut ;
+2. les en-têtes ;
+3. le corps, s’il y en a un.
+
+Une ligne vide sépare les en-têtes du corps.
+
+**Statut**
+
+La première ligne contient trois éléments :
+
+- la version HTTP, souvent `HTTP/1.1` ;
+- le code numérique, par exemple `200` ;
+- une phrase courte, par exemple `OK`.
+
+Le client s’appuie sur le code, pas sur la phrase.
+
+Familles de codes :
+
+- `2xx` : succès, `200` la requête a réussi ;
+- `4xx` : erreur du client, `404` la ressource est introuvable ;
+- `5xx` : erreur du serveur, `500` un traitement a échoué.
+
+Un refus de connexion n’est pas une réponse HTTP. TCP n’a pas pu s’établir, donc aucun message HTTP n’a été échangé.
+
+**En-têtes**
+
+Chaque en-tête est une ligne `Nom: valeur`. `Content-Type` indique le format du corps.
+
+**Corps**
+
+Le corps contient le résultat, par exemple une date extraite ou un message d’erreur.
+
+Une réponse peut n’avoir aucun corps.
+
+Le serveur qui produit cette réponse doit rester à l’écoute d’un port. Section suivante.
