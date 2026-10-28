@@ -195,3 +195,41 @@ Elle dit où le corps s’arrête. Sans taille connue, le lecteur ne sait pas qu
 Les en-têtes de requête décrivent ce que le client envoie. Ceux de réponse décrivent ce que le serveur renvoie. Les mêmes noms peuvent servir des deux côtés, notamment `Content-Type` et `Content-Length`.
 
 Le transport de ces messages dépend encore de la version HTTP. Section suivante.
+
+## Version
+
+La version HTTP indique comment les messages sont transportés. Méthode, chemin, en-têtes, statut et corps restent les mêmes idées. Le tuyau change.
+
+**HTTP/1.0**
+
+- Format : texte
+- Transport : TCP
+- Connexion : souvent une par requête
+
+**HTTP/1.1**
+
+- Format : texte
+- Transport : TCP
+- Connexion : réutilisable pour plusieurs requêtes
+- `Host` obligatoire
+- Corps possible sans taille fixe, par blocs (*chunked*)
+
+C’est encore la version la plus simple à lire : une requête ressemble au texte envoyé par `curl`.
+
+**HTTP/2**
+
+- Format : binaire
+- Transport : TCP
+- Plusieurs requêtes en parallèle sur une seule connexion
+
+Le texte `GET /documents HTTP/1.1` n’apparaît plus tel quel sur le réseau. Les en-têtes sont compressés.
+
+**HTTP/3**
+
+- Format : binaire
+- Transport : UDP, via QUIC
+- Plusieurs requêtes en parallèle, sans bloquer tout le flux si un paquet TCP est perdu
+
+Le client et le serveur se mettent d’accord sur une version. Si l’un ne connaît que HTTP/1.1, l’échange reste en 1.1.
+
+`http` envoie ces messages en clair. `https` les fait passer par TLS avant TCP ou QUIC. Section suivante.
