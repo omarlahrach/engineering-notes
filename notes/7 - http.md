@@ -111,3 +111,54 @@ Le corps contient le résultat, par exemple une date extraite ou un message d’
 Une réponse peut n’avoir aucun corps.
 
 Le serveur qui produit cette réponse doit rester à l’écoute d’un port. Section suivante.
+
+## Méthode
+
+La méthode dit ce que le client veut faire. Le serveur décide avec le couple **méthode + chemin**, pas avec le chemin seul.
+
+`GET /documents` lit. `POST /documents` enregistre.
+
+**GET**
+
+- Fait : lire
+- Corps : aucun en général
+- 1re fois : ne modifie rien
+- Fois suivantes : ne modifie toujours rien
+
+**POST**
+
+- Fait : créer ou déclencher un traitement
+- Corps : fréquent
+- 1re fois : un effet, par exemple une ressource créée
+- Fois suivantes : un nouvel effet possible, par exemple une deuxième ressource
+
+**PUT**
+
+- Fait : remplacer toute la ressource par le corps
+- Corps : la version complète
+- 1re fois : la ressource devient ce corps
+- Fois suivantes : elle est déjà ce corps, rien de plus n’est ajouté
+
+**PATCH**
+
+- Fait : modifier une partie de la ressource
+- Corps : uniquement les champs à changer
+- 1re fois : ces champs changent
+- Fois suivantes : selon l’opération, un nouvel effet est possible
+
+**DELETE**
+
+- Fait : supprimer la ressource
+- Corps : aucun en général
+- 1re fois : la ressource disparaît
+- Fois suivantes : elle est déjà absente, rien de plus n’est supprimé
+
+**Sûr**
+
+Aucune modification, dès la première fois. Seul `GET` est sûr.
+
+**Idempotent**
+
+La 1re fois peut changer la ressource. Les fois suivantes ne la transforment plus. `GET`, `PUT` et `DELETE` sont idempotents. `POST` ne l’est pas.
+
+La méthode dit l’intention. Les en-têtes précisent le message : format du corps, taille, machine visée. Section suivante.
