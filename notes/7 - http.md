@@ -34,3 +34,38 @@ Le noyau ouvre une connexion TCP vers `127.0.0.1:8080`. Le chemin n’appartient
 `https` nomme le même HTTP après une couche TLS. Il n’est pas détaillé ici.
 
 Une fois le serveur joint, le client envoie une requête. Section suivante.
+
+## Requête
+
+Une requête HTTP est le message envoyé par le client dans la connexion TCP.
+
+Elle contient trois parties, dans cet ordre :
+
+1. la ligne de requête ;
+2. les en-têtes ;
+3. le corps, s’il y en a un.
+
+Une ligne vide sépare les en-têtes du corps. Sans elle, le serveur ne sait pas où s’arrêtent les en-têtes.
+
+**Ligne**
+
+La première ligne contient trois éléments :
+
+- la méthode : l’intention, par exemple `GET` pour lire ou `POST` pour envoyer ;
+- le chemin : la ressource visée, reprise de l’URL ;
+- la version : les règles HTTP utilisées, souvent `HTTP/1.1`.
+
+**En-têtes**
+
+Chaque en-tête est une ligne `Nom: valeur`.
+
+- `Host` : machine visée ;
+- `Content-Type` : format du corps.
+
+**Corps**
+
+Le corps contient les données utiles, par exemple le texte d’un document.
+
+Une requête peut n’avoir aucun corps, notamment un `GET`.
+
+Le serveur répond avec un message de même famille. Section suivante.
