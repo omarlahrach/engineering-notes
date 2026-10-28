@@ -162,3 +162,36 @@ Aucune modification, dès la première fois. Seul `GET` est sûr.
 La 1re fois peut changer la ressource. Les fois suivantes ne la transforment plus. `GET`, `PUT` et `DELETE` sont idempotents. `POST` ne l’est pas.
 
 La méthode dit l’intention. Les en-têtes précisent le message : format du corps, taille, machine visée. Section suivante.
+
+## En-tête
+
+Un en-tête HTTP est une ligne `Nom: valeur`. Il décrit le message, pas la ressource elle-même.
+
+Les en-têtes se placent après la ligne de requête ou de statut, avant le corps. Une ligne vide les termine.
+
+**Host**
+
+Machine visée, obligatoire en HTTP/1.1. Exemple : `Host: localhost:8080`.
+
+Le noyau a déjà ouvert TCP vers une IP et un port. `Host` permet au serveur de savoir quel nom a été demandé, surtout lorsqu’il gère plusieurs sites sur la même machine.
+
+**Content-Type**
+
+Format du corps. Exemple : `text/plain`, `application/json`.
+
+Sans lui, le destinataire ne sait pas comment interpréter les octets du corps.
+
+**Content-Length**
+
+Taille du corps, en octets.
+
+Elle dit où le corps s’arrête. Sans taille connue, le lecteur ne sait pas quand le message est complet.
+
+**Autres**
+
+- `Connection` : garder ou fermer la connexion TCP après la réponse ;
+- `Authorization` : prouver qui envoie la requête. Plus tard.
+
+Les en-têtes de requête décrivent ce que le client envoie. Ceux de réponse décrivent ce que le serveur renvoie. Les mêmes noms peuvent servir des deux côtés, notamment `Content-Type` et `Content-Length`.
+
+Le transport de ces messages dépend encore de la version HTTP. Section suivante.
