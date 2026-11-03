@@ -233,3 +233,55 @@ Le texte `GET /documents HTTP/1.1` n’apparaît plus tel quel sur le réseau. L
 Le client et le serveur se mettent d’accord sur une version. Si l’un ne connaît que HTTP/1.1, l’échange reste en 1.1.
 
 `http` envoie ces messages en clair. `https` les fait passer par TLS avant TCP ou QUIC. Section suivante.
+
+## TLS
+
+TLS (*Transport Layer Security*) s’intercale après la connexion TCP et avant HTTP.
+
+1. TCP ouvre le tuyau
+2. TLS le verrouille
+3. HTTP circule ensuite, chiffré
+
+Le schéma `https` signifie HTTP au-dessus de TLS. Le port par défaut est `443`. `http` reste du HTTP en clair, port `80`.
+
+**Clair**
+
+Sans TLS, n’importe qui sur le chemin peut lire la requête et la réponse, y compris un mot de passe ou un document.
+
+**Cadenas**
+
+Client et serveur échangent d’abord assez d’informations pour calculer la même clé secrète. Cette clé n’est pas envoyée telle quelle. Ensuite, tous les octets sont chiffrés avec elle.
+
+Un observateur voit du bruit. Il ne voit plus la méthode, le chemin ni le corps.
+
+**Certificat**
+
+Le serveur envoie un certificat : il déclare le nom du site, par exemple `exemple.com`.
+
+Une autorité reconnue a signé ce fichier. Le client vérifie :
+
+- la signature vient d’une autorité qu’il connaît ;
+- le nom du certificat est celui de l’URL ;
+- le certificat n’est pas expiré.
+
+Si l’un de ces points échoue, aucun HTTP n’est envoyé.
+
+**Nom**
+
+Le certificat est lié au nom de domaine, pas au design du site.
+
+`https://github.com` exige un certificat `github.com`. Seul celui qui contrôle ce domaine peut l’obtenir.
+
+`https://github1.com` peut avoir un certificat valide, un cadenas, et le même habillage. TLS est correct pour ce nom. Ce n’est pas GitHub. Le client doit lire l’URL.
+
+HTTPS garantit le chiffrement, et le dialogue avec le propriétaire du nom affiché. Il ne garantit pas que ce nom est l’entreprise à laquelle on pense.
+
+**HTTP**
+
+Une fois TLS en place, HTTP ne change pas : mêmes méthodes, mêmes en-têtes, mêmes statuts. Seuls les octets sur le réseau sont illisibles.
+
+**Local**
+
+Sur `localhost`, `http` suffit : le message ne quitte pas la machine. Dès que le réseau n’est plus de confiance, TLS est obligatoire.
+
+HTTP définit la forme des messages échangés. Il ne définit pas quelles opérations une application expose, quelles données elle attend ni quelles réponses elle garantit. Cet ensemble forme un contrat appelé API. Section suivante.
