@@ -78,3 +78,37 @@ Une opération du système d’exploitation constitue aussi une API locale. Elle
 « Locale » ne signifie pas `localhost`. Deux processus qui communiquent avec des sockets sur `localhost` échangent quand même des messages par la pile réseau. Ils utilisent une API distante, même s’ils tournent sur la même machine.
 
 Quand le fournisseur se trouve dans un autre processus, le consommateur ne peut plus appeler directement ses fonctions. La demande et le résultat doivent être transformés en messages. Section suivante.
+
+## Distante
+
+Une API distante relie un consommateur et un fournisseur exécutés dans des processus séparés. Ils peuvent se trouver sur la même machine ou sur des machines différentes.
+
+Contrairement à un appel local, le consommateur ne peut pas appeler directement une fonction du fournisseur ni accéder à sa mémoire. Les deux processus communiquent en échangeant des messages.
+
+Une opération distante suit ce parcours général :
+
+1. le consommateur prépare une demande ;
+2. la demande est transmise au fournisseur ;
+3. le fournisseur l’interprète et exécute l’opération ;
+4. il prépare un résultat ;
+5. le résultat est transmis au consommateur.
+
+Cette séparation ajoute des situations qui n’existent pas lors d’un appel local :
+
+- le fournisseur peut être indisponible ;
+- la connexion peut échouer ;
+- la transmission peut être interrompue ;
+- le consommateur peut dépasser son délai d’attente ;
+- l’opération peut avoir été exécutée alors que sa réponse n’est jamais parvenue.
+
+Un délai dépassé ne prouve donc pas que l’opération n’a pas eu lieu. Répéter la demande peut produire un nouvel effet si l’opération n’est pas idempotente.
+
+Une API distante utilise des messages pour demander une opération et recevoir son résultat.
+
+Avec HTTP, le contrat précise pour chaque opération :
+
+- la méthode et le chemin de la requête ;
+- les en-têtes et le corps attendus ;
+- les codes de statut, les en-têtes et le corps possibles dans la réponse.
+
+Une API distante exposée au moyen de requêtes et de réponses HTTP est appelée une API HTTP. Section suivante.
