@@ -57,3 +57,24 @@ Une modification interne est donc compatible avec l’API. En revanche, supprime
 Les types du code, la documentation et les tests peuvent décrire ou vérifier ce contrat. Aucun de ces éléments ne remplace cependant le comportement réellement observable par le consommateur.
 
 Ce contrat peut être utilisé directement dans le même processus ou traverser un réseau sous forme de messages. Le cas local est le plus direct. Section suivante.
+
+## Locale
+
+Une API locale est utilisée sans échange de messages sur le réseau.
+
+Lorsqu’un programme utilise une bibliothèque, il appelle directement les fonctions ou les méthodes qu’elle expose. Le langage et son environnement transmettent les arguments, exécutent le code puis rendent le résultat.
+
+Dans un langage typé, le compilateur peut déjà vérifier une partie du contrat :
+
+- l’opération existe ;
+- le nombre d’arguments est correct ;
+- les types attendus sont respectés ;
+- le type du résultat est connu.
+
+Il ne peut pas vérifier tout le comportement, comme la signification du résultat ou les conditions qui provoquent une erreur.
+
+Une opération du système d’exploitation constitue aussi une API locale. Elle traverse la frontière entre le programme et le noyau, mais n’utilise pas le réseau.
+
+« Locale » ne signifie pas `localhost`. Deux processus qui communiquent avec des sockets sur `localhost` échangent quand même des messages par la pile réseau. Ils utilisent une API distante, même s’ils tournent sur la même machine.
+
+Quand le fournisseur se trouve dans un autre processus, le consommateur ne peut plus appeler directement ses fonctions. La demande et le résultat doivent être transformés en messages. Section suivante.
