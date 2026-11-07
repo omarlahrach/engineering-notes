@@ -36,3 +36,24 @@ Dans les deux premiers cas, l’appel peut rester dans la même machine. Dans le
 HTTP définit comment transporter et structurer les messages. L’API définit quelles opérations précises le logiciel offre au moyen de ces messages.
 
 Une interface ne suffit cependant pas si son comportement reste ambigu. Les opérations, les entrées, les résultats et les erreurs doivent former un contrat. Section suivante.
+
+## Contrat
+
+Le contrat d’une API rassemble les promesses observables sur lesquelles le consommateur peut compter.
+
+Pour chaque opération, il précise :
+
+- comment la demander ;
+- quelles entrées sont obligatoires ou facultatives ;
+- le type et le format de ces entrées ;
+- le résultat possible ;
+- les erreurs possibles ;
+- les effets produits, par exemple lire, créer ou supprimer une donnée.
+
+Le contrat ne décrit pas comment le fournisseur réalise l’opération. Son algorithme, ses classes internes ou son stockage peuvent changer sans affecter le consommateur, tant que les promesses restent respectées.
+
+Une modification interne est donc compatible avec l’API. En revanche, supprimer une opération, rendre une entrée obligatoire ou changer le sens d’un résultat peut casser les consommateurs : le contrat a changé.
+
+Les types du code, la documentation et les tests peuvent décrire ou vérifier ce contrat. Aucun de ces éléments ne remplace cependant le comportement réellement observable par le consommateur.
+
+Ce contrat peut être utilisé directement dans le même processus ou traverser un réseau sous forme de messages. Le cas local est le plus direct. Section suivante.
