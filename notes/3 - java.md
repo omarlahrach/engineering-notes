@@ -277,4 +277,4 @@ La commande `java -jar application.jar` lance une JVM, lit le manifeste et exéc
 
 Un JAR contient du bytecode, pas des instructions cpu. Il nécessite donc toujours une JVM compatible.
 
-Créer une application manuellement impose de nettoyer les anciens fichiers, compiler tous les sources, exécuter les tests puis produire l'archive. Un outil de build automatise cette chaîne.
+Créer une application manuellement impose de nettoyer les anciens fichiers, compiler tous les sources, exécuter les tests puis produire l'archive. Maven automatise cette chaîne. Section suivante.
