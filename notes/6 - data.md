@@ -96,3 +96,41 @@ La mémoire organise ces octets afin que le programme puisse les retrouver. Sect
 - Un processus ne peut pas lire la mémoire d’un autre processus directement.
 
 Le programme décide comment lire les octets placés à une adresse. Cette décision s'appelle le type. Section suivante.
+
+## Type
+
+**Définition**
+
+- Le type indique comment lire les octets à partir d'une adresse.
+- Il fixe la taille : le nombre d'octets à lire.
+- Il fixe la lecture : le calcul qui transforme ces octets en valeur.
+- Il fixe les opérations autorisées sur cette valeur.
+
+**Lecture**
+
+- L'adresse `1000` contient l'octet `01000001`.
+- Lu comme un nombre : `64 + 1 = 65`.
+- Lu comme un caractère : le code `65` désigne `A`.
+- L'octet reste `01000001` dans les deux cas.
+
+**Taille**
+
+- Le type `byte` lit 1 octet.
+- Le type `int` lit 4 octets.
+- Les deux peuvent contenir le nombre `65`.
+- À partir de la même adresse, ils ne lisent pas la même quantité d'octets.
+
+**Opérations**
+
+- Sur un nombre, `+ 1` produit le nombre suivant.
+- Sur un caractère, cette addition n'a pas le même sens.
+- Le type sert à accepter ou refuser l'opération.
+
+**Code**
+
+- Le type est déclaré dans le code : `byte nombre = 65`.
+- Il n'est pas écrit dans l'octet `01000001`.
+- Le compilateur vérifie que l'opération respecte le type.
+- Pendant l'exécution, le programme lit exactement les octets prévus par le type.
+
+Deux types peuvent écrire la même valeur avec des octets différents. La forme exacte de ces octets est sa représentation. Section suivante.
