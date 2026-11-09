@@ -374,3 +374,5 @@ Maven résout les expressions avant de transmettre la configuration au plugin.
 Une propriété Maven n’est pas automatiquement une propriété système Java. Le plugin doit explicitement la transmettre à la JVM pour que le code puisse la lire avec `System.getProperty`.
 
 Réutiliser les propriétés du modèle évite de dupliquer les informations du POM et conserve le build lorsque le nom ou la version du projet change.
+
+Le build exécute des tests, mais il ne décide pas du comportement attendu. Ce comportement vient de la logique du programme. Section suivante.
