@@ -35,3 +35,28 @@
 - Le groupe standard de huit bits s’appelle un octet.
 
 L’octet est l’unité suivante. Section suivante.
+
+## Octet
+
+**Définition**
+
+- Un octet est un groupe de huit bits.
+- Il possède `2⁸`, donc `256`, combinaisons possibles.
+- Elles vont de `00000000` à `11111111`.
+- Dans les systèmes actuels, *byte* désigne généralement un octet.
+
+**Sens**
+
+- Un octet identifie une combinaison parmi `256`.
+- Ses bits n’indiquent pas ce qu’ils représentent.
+- Le même octet `01000001` peut être lu comme le nombre `65` ou comme le caractère `A`.
+- Le résultat dépend de la manière dont le programme le traite.
+
+**Usage**
+
+- La mémoire est organisée en octets.
+- Un fichier contient une suite d’octets.
+- Un flux transporte une suite d’octets.
+- Une valeur peut occuper un ou plusieurs octets.
+
+La mémoire organise ces octets afin que le programme puisse les retrouver. Section suivante.
