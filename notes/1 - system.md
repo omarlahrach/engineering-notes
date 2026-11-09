@@ -27,8 +27,26 @@ Quand le noyau l'exécute, ça devient un processus.
 
 ## Processus
 
-Un processus est un programme en cours d'exécution.
+**Définition**
 
-Le noyau lit le programme sur le disque, le charge en ram, et fait exécuter ses instructions par le cpu. Chaque processus reçoit un identifiant unique attribué par le noyau, le *PID* (*process id*). Le noyau isole la ram de chaque processus : l'un n'accède pas à celle d'un autre.
+- Un processus est un programme en cours d'exécution.
+- Le programme reste un fichier sur le disque.
+- Le processus est ce fichier chargé et exécuté.
 
-La RAM du processus contient ses instructions et ses données. Cette mémoire est une suite d'octets. Il faut d'abord comprendre comment ces octets sont organisés et interprétés. Section suivante.
+**Démarrage**
+
+- Le noyau lit le programme sur le disque.
+- Il le charge en RAM.
+- Le CPU exécute ses instructions.
+
+**Identité**
+
+- Le noyau attribue à chaque processus un *PID* (*process id*).
+- Ce numéro identifie le processus pendant qu'il tourne.
+
+**Isolation**
+
+- Le noyau sépare la RAM de chaque processus.
+- Un processus n'accède pas à la RAM d'un autre.
+
+Le CPU est le composant qui exécute les instructions chargées en RAM. Section suivante.
