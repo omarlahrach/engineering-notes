@@ -58,3 +58,36 @@ Ces trois parties coopèrent selon un enchaînement fixe. Section suivante.
 Fetch, decode, execute et write back se répètent en boucle.
 
 Un même chip peut contenir plusieurs processeurs complets. Section suivante.
+
+## Cœur
+
+**Core** — *cœur*
+
+- Un **chip** peut contenir plusieurs **cores**.
+- Un core est un processeur complet : sa propre **control unit**, **ALU** et **registers**.
+- Chaque core exécute son propre **cycle**, indépendamment des autres.
+
+**Un fil**
+
+- Un **fil d'exécution** (*thread*) est une suite d'instructions enchaînées.
+- À un instant donné, il tourne sur **un seul** core.
+- Quatre cores n'accélèrent **pas** ce fil unique : il ne se divise pas tout seul sur les quatre.
+
+**Concurrence** — *concurrency*
+
+- Plusieurs tâches **avancent** en même temps dans le programme global.
+- Elles ne **calculent pas** toutes au même instant sur le CPU.
+- Exemple : un core sert le fil A, puis B, puis A, puis B.
+- C'est possible **même avec un seul core** : le noyau alterne.
+
+**Parallèle** — *parallelism*
+
+- Plusieurs tâches **calculent au même instant**.
+- Chacune sur un **core** distinct.
+- Exemple : core 1 sur le fil A, core 2 sur le fil B, simultanément.
+- **Impossible avec un seul core** au même instant.
+
+- Tout parallèle est concurrent.
+- La concurrence n'est pas toujours parallèle.
+
+Le CPU lit et écrit des valeurs en RAM. Section suivante.
