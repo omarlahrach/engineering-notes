@@ -60,3 +60,39 @@ L’octet est l’unité suivante. Section suivante.
 - Une valeur peut occuper un ou plusieurs octets.
 
 La mémoire organise ces octets afin que le programme puisse les retrouver. Section suivante.
+
+## Mémoire
+
+**Définition**
+
+- La mémoire vive, ou RAM, conserve les données utilisées pendant l’exécution.
+- Elle est organisée en octets.
+- Chaque octet possède une adresse : un numéro qui le désigne.
+- Elle est volatile : son contenu disparaît à l’extinction de la machine.
+
+**Adresse**
+
+- Une adresse ne contient pas de donnée ; elle indique où se trouve un octet.
+- Les adresses se suivent : `0`, `1`, `2`, `3`…
+- Une valeur sur plusieurs octets occupe des adresses consécutives.
+- Il suffit de connaître la première adresse et la taille pour la retrouver.
+
+**Accès**
+
+- Le processeur lit une adresse pour obtenir des octets.
+- Il écrit des octets à une adresse pour les conserver.
+- Lire ne modifie pas l’octet ; écrire remplace l’ancien contenu.
+
+**Sens**
+
+- La mémoire conserve les octets, pas leur signification.
+- Elle n’indique pas si une adresse contient un nombre, un texte ou une instruction.
+- Le programme sait ce que chaque adresse contient, car il a choisi quoi y écrire.
+
+**Processus**
+
+- Chaque processus reçoit sa propre vue de la mémoire.
+- Une adresse valide dans un processus n’a aucun sens dans un autre.
+- Un processus ne peut pas lire la mémoire d’un autre processus directement.
+
+Le programme décide comment lire les octets placés à une adresse. Cette décision s'appelle le type. Section suivante.
