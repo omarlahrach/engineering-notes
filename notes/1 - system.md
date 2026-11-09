@@ -21,9 +21,9 @@ Ce que le noyau lance, c'est un programme sur le disque.
 
 ## Programme
 
-Un programme est un fichier sur le disque. Il contient des instructions destinées au cpu. Tant qu'il n'est pas exécuté, il ne consomme ni cpu ni ram.
+Un programme est un fichier sur le disque. Il contient des instructions destinées au CPU. Tant qu'il n'est pas lancé, il ne consomme ni CPU ni RAM pour son exécution.
 
-Quand le noyau l'exécute, ça devient un processus.
+Le noyau peut le charger en RAM et lui créer un processus. Section suivante.
 
 ## Processus
 
