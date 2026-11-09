@@ -57,4 +57,4 @@ Plus un test couvre de composants, plus il est réaliste, mais aussi plus il est
 
 Une stratégie équilibrée utilise beaucoup de tests unitaires, moins de tests d’intégration autour des frontières importantes et quelques tests de bout en bout pour les parcours critiques.
 
-L’automatisation de ces tests nécessite un modèle pour les déclarer, les découvrir et les exécuter. Dans l’écosystème Java, ce modèle est fourni par JUnit.
+L'automatisation de ces tests nécessite un modèle pour les déclarer, les découvrir et les exécuter. Dans l'écosystème Java, ce modèle est fourni par JUnit. Section suivante.
