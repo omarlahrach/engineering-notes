@@ -1,3 +1,25 @@
+# Information
+
+**Contenu**
+
+- L'information est un contenu qu'on peut nommer et réutiliser.
+- Il prend des formes courantes : une quantité, un symbole, une date, un choix entre deux réponses.
+
+**Exemples**
+
+- `42` — une quantité
+- `A` — un symbole
+- `2026-11-10` — une date
+- `oui` / `non` — un choix
+
+**Propriétés**
+
+- On peut le recopier sans le déformer.
+- On peut le modifier selon une règle.
+- On peut le conserver ou l'envoyer d'une machine à une autre.
+
+Ce contenu traité automatiquement s'appelle l'information automatique : l'informatique. Section suivante.
+
 # Machine
 
 Une machine est un ordinateur. Quatre composants la constituent.
