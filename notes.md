@@ -61,3 +61,24 @@ Une machine est un ordinateur. Elle porte le flux de l'informatique : entrée, t
 À travers le réseau, la machine qui contacte est le client. La machine qui reste disponible et qui répond est le serveur.
 
 Dans chaque composant, l'information est représentée par des bits. Section suivante.
+
+# Bit
+
+**Bit** — *binary digit*, chiffre binaire
+
+- C'est l'unité avec laquelle chaque composant représente l'information.
+- Un bit a deux états : `0` ou `1`.
+
+**Support**
+
+- Le bit est toujours `0` ou `1`. Le support change selon le composant.
+- **CPU** : une tension. Haute pour `1`, basse pour `0`.
+- **RAM** : une charge dans un condensateur, réservoir électrique minuscule. Présente pour `1`, absente pour `0`.
+- **Disque magnétique** : l'orientation d'une zone aimantée. Un sens pour `1`, le sens opposé pour `0`.
+
+**Capacité**
+
+- Un bit encode un choix à deux réponses : `oui` ou `non`, `0` ou `1`.
+- Avec `n` bits, il existe `2ⁿ` choix distincts. Plus l'information demande de variantes, plus il faut de bits pour la représenter sans ambiguïté.
+
+Le groupe de huit bits s'appelle un octet. Section suivante.
