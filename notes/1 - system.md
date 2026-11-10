@@ -54,4 +54,4 @@ Le noyau peut le charger en RAM et lui créer un processus. Section suivante.
 - Chaque processus possède sa propre RAM.
 - Un processus n'accède pas à la RAM d'un autre.
 
-Le CPU exécute les instructions du processus une fois l'exécution commencée. Section suivante.
+Ce qui est chargé en RAM est une suite de valeurs. Une valeur est faite de bits. Section suivante.
