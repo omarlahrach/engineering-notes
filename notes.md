@@ -3,20 +3,31 @@
 **Contenu**
 
 - L'information est un contenu qu'on peut nommer et réutiliser.
-- Il prend des formes courantes : une quantité, un symbole, une date, un choix entre deux réponses.
+- Elle est discrète (symbole, nombre…) ou numérisée (son, image…).
+- Les exemples ci-dessous illustrent des formes courantes de ce contenu.
 
-**Exemples**
+**Exemples — valeurs discrètes**
 
-- `42` — une quantité
-- `A` — un symbole
+- `42` — un nombre entier
+- `3.14` — un nombre décimal
+- `A` — un caractère
+- `Bonjour` — un texte
 - `2026-11-10` — une date
-- `oui` / `non` — un choix
+- `14:30` — une heure
+- `oui` / `non` — un booléen
+- `rouge` ou `#FF0000` — une couleur
+
+**Exemples — médias numérisés**
+
+- un extrait musical — un son
+- une photo — une image
+- une séquence filmée — une vidéo
 
 **Propriétés**
 
 - On peut le recopier sans le déformer.
 - On peut le modifier selon une règle.
-- On peut le conserver ou l'envoyer d'une machine à une autre.
+- On peut le conserver ou l'envoyer à distance.
 
 Ce contenu traité automatiquement s'appelle l'information automatique : l'informatique. Section suivante.
 
