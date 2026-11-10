@@ -20,6 +20,21 @@
 
 Ce contenu traité automatiquement s'appelle l'information automatique : l'informatique. Section suivante.
 
+# Informatique
+
+**Définition**
+
+- L'informatique est l'information automatique.
+- Une machine enchaîne recopier, modifier, conserver et envoyer, sans répéter chaque étape à la main.
+
+**Flux**
+
+- Entrée : de l'information.
+- Traitement : des opérations sur cette information.
+- Sortie : de l'information transformée ou conservée.
+
+Ce flux s'exécute sur une machine. Section suivante.
+
 # Machine
 
 Une machine est un ordinateur. Quatre composants la constituent.
