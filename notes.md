@@ -75,7 +75,7 @@ Une machine est un ordinateur. Elle exécute un programme.
 
 - **CPU** — *Central Processing Unit*, le processeur. Il exécute les instructions du programme.
 - **RAM** — *Random Access Memory*, la mémoire vive. Elle retient l'information pendant l'exécution. Sans courant, ce contenu disparaît.
-- **Disque** — il conserve l'information après l'arrêt.
+- **Disque** — il conserve le programme, et le reste de l'information, après l'arrêt.
 - **Réseau** — il relie une machine à une autre.
 
 À travers le réseau, la machine qui contacte est le client. La machine qui reste disponible et qui répond est le serveur.
