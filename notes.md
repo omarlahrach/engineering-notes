@@ -82,3 +82,24 @@ Dans chaque composant, l'information est représentée par des bits. Section sui
 - Avec `n` bits, il existe `2ⁿ` choix distincts. Plus l'information demande de variantes, plus il faut de bits pour la représenter sans ambiguïté.
 
 Le groupe de huit bits s'appelle un octet. Section suivante.
+
+# Octet
+
+**Octet** — *byte*
+
+- Un octet regroupe huit bits.
+- Huit n'est pas imposé par les mathématiques : c'est un compromis retenu par l'industrie.
+- Il offre `2⁸`, donc `256`, combinaisons, de `00000000` à `11111111`, suffisent pour une unité pratique de stockage et d'échange.
+- Dans l'usage courant, *byte* désigne un octet.
+
+**Sens**
+
+- Les huit bits n'indiquent pas, à eux seuls, ce qu'ils représentent.
+- Le même motif `01000001` peut encoder des contenus différents selon la règle de lecture appliquée.
+
+**Usage**
+
+- Les composants manipulent l'information par octets.
+- Une information peut occuper un ou plusieurs octets consécutifs.
+
+La RAM range ces octets. Section suivante.
