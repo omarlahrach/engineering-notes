@@ -66,19 +66,16 @@ Ce programme s'exécute sur une machine. Section suivante.
 
 # Machine
 
-Une machine est un ordinateur. Elle porte le flux de l'informatique : entrée, traitement, sortie.
+Une machine est un ordinateur. Elle exécute un programme.
 
-- **CPU** — *Central Processing Unit*, le processeur. Il exécute le traitement : recopier et modifier l'information selon une règle.
-
-- **RAM** — *Random Access Memory*, la mémoire vive. Elle retient l'information pendant le traitement. Tant que le courant passe, elle la garde accessible. Sans courant, ce contenu disparaît.
-
-- **Disque** — il conserve l'information après l'arrêt de la machine, ce que la RAM ne garde pas.
-
-- **Réseau** — il envoie l'information d'une machine à une autre.
+- **CPU** — *Central Processing Unit*, le processeur. Il exécute les instructions du programme.
+- **RAM** — *Random Access Memory*, la mémoire vive. Elle retient l'information pendant l'exécution. Sans courant, ce contenu disparaît.
+- **Disque** — il conserve l'information après l'arrêt.
+- **Réseau** — il relie une machine à une autre.
 
 À travers le réseau, la machine qui contacte est le client. La machine qui reste disponible et qui répond est le serveur.
 
-Dans chaque composant, l'information est représentée par des bits. Section suivante.
+Ces composants ne sont pas utilisés directement par chaque programme. Un programme particulier les contrôle : le noyau. Section suivante.
 
 # Bit
 
