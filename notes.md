@@ -46,6 +46,24 @@ Ce contenu traité automatiquement s'appelle l'information automatique : l'infor
 
 Ce flux est décrit par un programme. Section suivante.
 
+# Programme
+
+**Program** — *programme*
+
+- Un programme est une suite ordonnée d'instructions.
+- Chaque instruction applique une propriété de l'information : recopier, modifier, conserver ou envoyer.
+- Le programme décrit le flux de l'informatique. Il ne l'exécute pas.
+
+**Exemple**
+
+- Entrée : un montant.
+- Instruction 1 : lire le montant.
+- Instruction 2 : ajouter une taxe.
+- Instruction 3 : produire le total.
+- Sortie : le total.
+
+Ce programme s'exécute sur une machine. Section suivante.
+
 # Machine
 
 Une machine est un ordinateur. Elle porte le flux de l'informatique : entrée, traitement, sortie.
