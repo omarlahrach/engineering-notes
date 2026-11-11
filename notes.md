@@ -82,6 +82,24 @@ Une machine est un ordinateur. Elle exécute un programme.
 
 Ces composants ne sont pas utilisés directement par chaque programme. Un programme particulier les contrôle : le noyau. Section suivante.
 
+# Noyau
+
+**Kernel** — *noyau*
+
+- Le noyau est un programme.
+- Il contrôle l'accès au CPU, à la RAM, au disque et au réseau.
+- Les autres programmes ne touchent pas ces composants directement.
+- Ils passent par le noyau : chaque demande est un *appel système* (*system call*).
+
+**Rôle**
+
+- Accorder ou refuser l'accès au matériel.
+- Allouer de la RAM.
+- Lire et écrire sur le disque.
+- Échanger sur le réseau.
+
+Le noyau est le cœur d'un ensemble plus large : le système d'exploitation. Section suivante.
+
 # Bit
 
 **Bit** — *binary digit*, chiffre binaire
