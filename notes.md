@@ -62,7 +62,12 @@ Ce flux est décrit par un programme. Section suivante.
 - Instruction 3 : produire le total.
 - Sortie : le total.
 
-Ce programme s'exécute sur une machine. Section suivante.
+**Nature**
+
+- Un programme est lui-même de l'information : une suite d'instructions.
+- Sans support pour la conserver, il n'existe que comme description.
+
+Ce support est la machine : elle conserve le programme, lit ses instructions et les exécute. Section suivante.
 
 # Machine
 
