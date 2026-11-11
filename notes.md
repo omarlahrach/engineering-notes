@@ -100,6 +100,24 @@ Ces composants ne sont pas utilisés directement par chaque programme. Un progra
 
 Le noyau est le cœur d'un ensemble plus large : le système d'exploitation. Section suivante.
 
+# Système d'exploitation
+
+**Operating system (OS)** — *système d'exploitation*
+
+- Le système d'exploitation est un ensemble de programmes.
+- Son cœur est le noyau.
+- Autour du noyau : d'autres programmes qui rendent la machine utilisable.
+
+**Exemples**
+
+- Linux
+- Windows
+- macOS
+
+Chaque système d'exploitation a son noyau. Les programmes passent par ce noyau pour accéder au matériel.
+
+Pour exécuter un programme, le noyau crée un processus. Section suivante.
+
 # Bit
 
 **Bit** — *binary digit*, chiffre binaire
