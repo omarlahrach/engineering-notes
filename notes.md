@@ -119,3 +119,31 @@ La RAM range ces octets. Section suivante.
 - *Random access* : accéder à un octet ne dépend pas de sa position ; le temps d'accès reste du même ordre.
 
 Chaque octet en RAM porte une adresse qui le désigne. Section suivante.
+
+# Adresse
+
+**Address** — *adresse*
+
+- La RAM est une suite de cases. Chaque case contient un octet.
+- Chaque case a un numéro : son adresse.
+- Exemple : l'adresse `1000` désigne la case numéro `1000`, pas le contenu `01000001` qui peut s'y trouver.
+
+**Rôle**
+
+- L'adresse sert au CPU pour demander un octet précis : « donne l'octet de la case `1000` » ou « écris cet octet dans la case `1000` ».
+- Le numéro n'est pas collé à l'intérieur de l'octet. C'est le CPU qui indique quel numéro il veut ; la RAM répond avec l'octet de cette case.
+
+**Adresse comme information**
+
+- Une adresse peut elle-même être conservée en RAM, à une autre case : « l'octet utile est à la case `1000` ».
+- On le détaillera avec les pointeurs.
+
+**Numérotation**
+
+- Les numéros se suivent : `0`, `1`, `2`, `3`…
+- Une information qui tient sur plusieurs octets occupe plusieurs cases voisines : adresse de départ et nombre d'octets.
+
+**Sens**
+
+- La case ne dit pas si l'octet est un caractère, un nombre ou autre chose.
+- La règle qui dit comment interpréter les octets porte un nom : le type. Section suivante.
