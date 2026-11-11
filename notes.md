@@ -103,3 +103,19 @@ Le groupe de huit bits s'appelle un octet. Section suivante.
 - Une information peut occuper un ou plusieurs octets consécutifs.
 
 La RAM range ces octets. Section suivante.
+
+# RAM
+
+**RAM** — *Random Access Memory*, mémoire vive
+
+- La RAM conserve les octets pendant le traitement décrit dans le flux de l'informatique.
+- Elle est organisée en cases d'un octet chacune.
+- Elle est volatile : sans courant, son contenu disparaît.
+
+**Accès**
+
+- Le CPU lit des octets en RAM pour les traiter.
+- Il écrit des octets en RAM pour conserver le résultat d'une opération.
+- *Random access* : accéder à un octet ne dépend pas de sa position ; le temps d'accès reste du même ordre.
+
+Chaque octet en RAM porte une adresse qui le désigne. Section suivante.
