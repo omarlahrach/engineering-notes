@@ -36,7 +36,7 @@ Ce contenu traité automatiquement s'appelle l'information automatique : l'infor
 **Définition**
 
 - L'informatique est l'information automatique.
-- Une machine enchaîne recopier, modifier, conserver et envoyer, sans répéter chaque étape à la main.
+- Les opérations — recopier, modifier, conserver, envoyer — s'exécutent sans qu'une personne les refasse à chaque étape.
 
 **Flux**
 
@@ -44,7 +44,7 @@ Ce contenu traité automatiquement s'appelle l'information automatique : l'infor
 - Traitement : des opérations sur cette information.
 - Sortie : de l'information transformée ou conservée.
 
-Ce flux s'exécute sur une machine. Section suivante.
+Ce flux est décrit par un programme. Section suivante.
 
 # Machine
 
