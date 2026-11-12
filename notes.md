@@ -242,8 +242,21 @@ public class Cart {
     }
 }
 ```
+- Fichier : `Cart.java`
+- À l'écran, une fois le parcours terminé : `6`
 
-La machine n'exécute pas ce texte tel quel. Il faut une transformation : la compilation. Le programme qui l'effectue s'appelle un compilateur. Section suivante.
+**Ce que cet exemple permettra de voir plus loin**
+
+- types, classe, objet, tableau, boucle, méthode
+- pile, tas, CPU, RAM
+- compilation puis exécution jusqu'à l'affichage
+
+**Limite**
+
+- La machine n'exécute pas ce texte tel quel.
+- Il faut une transformation : la compilation.
+
+Le programme qui effectue cette transformation s'appelle un compilateur. Section suivante.
 
 # Bit
 
