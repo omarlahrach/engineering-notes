@@ -480,7 +480,8 @@ Ces fichiers `.class` de bibliothèque sont souvent regroupés dans une archive 
 
 - Un JAR est une archive : plusieurs fichiers `.class` (et parfois d'autres fichiers) regroupés en un seul fichier `.jar`.
 - Ça simplifie le partage et l'utilisation d'une bibliothèque : un fichier au lieu d'un dossier de classes.
+- La JVM peut charger des classes depuis un JAR.
 - Une bibliothèque que tu crées toi-même peut aussi être empaquetée en JAR.
-- Le JAR compte surtout pour distribuer ou réutiliser du code.
+- Pour `Cart`, aucun JAR n'est nécessaire : `Cart.class` et `java.lang` suffisent.
 
-Sans installation dédiée, ni `javac`, ni `jar`, ni `java.lang` ne sont sur la machine. Ces pièces — compilateur, outils d'archive, bibliothèques de base — arrivent ensemble avec le JDK. Section suivante.
+Sans installation dédiée, ni JVM, ni outil `jar`, ni `java.lang` ne sont sur la machine. Ces pièces — runtime, outil d'archive, bibliothèques de base — arrivent ensemble avec le JDK. Section suivante.
