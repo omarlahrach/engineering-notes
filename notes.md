@@ -1,3 +1,17 @@
+# Logiciel
+
+Vous lisez ces lignes sur un écran. Ce qui vous permet de les afficher, de défiler, de zoomer, de cliquer, ce n'est pas l'écran lui-même. C'est autre chose, que vous ne touchez pas : le **logiciel** (*software*).
+
+Le logiciel, ce sont les instructions qu'un téléphone ou un ordinateur exécute pour accomplir une tâche. L'écran, le clavier, la batterie, le boîtier : tout ce que vous pouvez tenir, c'est autre chose. Sans logiciel, ce ne serait qu'un assemblage de pièces inertes.
+
+Vous en utilisez déjà tous les jours :
+
+- un **site web** — une page dans votre navigateur : banque, journal, messagerie ;
+- une **application mobile** — sur votre téléphone : messages, météo, carte ;
+- une **application sur ordinateur** — traitement de texte, jeu, éditeur de photos.
+
+Ce que ce logiciel vous montre et vous laisse manipuler — un solde, un message, une photo — s'appelle l'information. Section suivante.
+
 # Information
 
 **Contenu**
@@ -63,24 +77,6 @@ Ce flux est décrit par un programme. Section suivante.
 - Sortie : le total.
 
 Un programme est une unité de logiciel. Section suivante.
-
-# Logiciel
-
-**Software** — *logiciel*
-
-- Le logiciel, c'est ce qui fait accomplir une tâche sans être une pièce physique.
-- Un **site web** : pages ouvertes dans un navigateur — banque, journal, messagerie web.
-- Une **application mobile** : installée sur un téléphone ou une tablette — messages, météo, carte.
-- Une **application desktop** : installée sur un PC — traitement de texte, jeu, éditeur.
-- Un **service distant** : un programme qui travaille ailleurs et répond à vos demandes, par exemple pour vérifier un mot de passe.
-
-**Programme et logiciel**
-
-- Un programme est une suite d'instructions.
-- Un logiciel est ce programme, ou plusieurs, réunis en produit utilisable : avec ce qu'il faut pour l'offrir (réglages, ressources associées).
-- Tout logiciel repose sur au moins un programme.
-
-Ce logiciel s'exécute sur une machine. Section suivante.
 
 # Machine
 
