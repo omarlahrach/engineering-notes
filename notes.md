@@ -229,6 +229,23 @@ Un bit seul ne suffit presque jamais : un caractère, un petit nombre, une coule
 
 La RAM range ces octets. Section suivante.
 
+# RAM
+
+**RAM** — *Random Access Memory*, mémoire vive
+
+- La RAM est la mémoire de travail de la machine.
+- Elle range les octets pendant l'exécution.
+- Elle est organisée en cases : une case, un octet.
+- Elle est volatile : sans courant, son contenu disparaît.
+
+**Accès**
+
+- Le CPU lit des octets en RAM pour les traiter.
+- Il écrit des octets en RAM pour y laisser un résultat.
+- *Random access* : le temps d'accès à une case ne dépend pas de sa position.
+
+Chaque case a un numéro qui la désigne : une adresse. Section suivante.
+
 # Java
 
 **Java**
@@ -388,23 +405,6 @@ Ces fichiers `.class` de bibliothèque sont souvent regroupés dans une archive 
 - Le JAR compte surtout pour distribuer ou réutiliser du code.
 
 Sans installation dédiée, ni `javac`, ni `jar`, ni `java.lang` ne sont sur la machine. Ces pièces — compilateur, outils d'archive, bibliothèques de base — arrivent ensemble avec le JDK. Section suivante.
-
-# RAM
-
-**RAM** — *Random Access Memory*, mémoire vive
-
-- La RAM est la mémoire de travail de la machine.
-- Elle range les octets pendant l'exécution.
-- Elle est organisée en cases : une case, un octet.
-- Elle est volatile : sans courant, son contenu disparaît.
-
-**Accès**
-
-- Le CPU lit des octets en RAM pour les traiter.
-- Il écrit des octets en RAM pour y laisser un résultat.
-- *Random access* : le temps d'accès à une case ne dépend pas de sa position.
-
-Chaque case a un numéro qui la désigne : une adresse. Section suivante.
 
 # Adresse
 
