@@ -64,6 +64,24 @@ Ce flux est décrit par un programme. Section suivante.
 
 Un programme est une unité de logiciel. Section suivante.
 
+# Logiciel
+
+**Software** — *logiciel*
+
+- Le logiciel, c'est ce qui fait accomplir une tâche sans être une pièce physique.
+- Un **site web** : pages ouvertes dans un navigateur — banque, journal, messagerie web.
+- Une **application mobile** : installée sur un téléphone ou une tablette — messages, météo, carte.
+- Une **application desktop** : installée sur un PC — traitement de texte, jeu, éditeur.
+- Un **service distant** : un programme qui travaille ailleurs et répond à vos demandes, par exemple pour vérifier un mot de passe.
+
+**Programme et logiciel**
+
+- Un programme est une suite d'instructions.
+- Un logiciel est ce programme, ou plusieurs, réunis en produit utilisable : avec ce qu'il faut pour l'offrir (réglages, ressources associées).
+- Tout logiciel repose sur au moins un programme.
+
+Ce logiciel s'exécute sur une machine. Section suivante.
+
 # Machine
 
 Une machine est un ordinateur. Elle exécute un programme.
