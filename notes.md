@@ -186,6 +186,17 @@ Sans système d'exploitation, la machine ne vous offre ni écran d'accueil, ni e
 
 Les applications tournent sur l'OS. Pour les écrire, on utilise un langage. Java est l'un des langages les plus utilisés pour cet objectif. Section suivante.
 
+# Java
+
+**Java**
+
+- Java est un langage : un vocabulaire et des règles pour écrire des programmes.
+- Il a été créé chez Sun Microsystems (James Gosling et son équipe), rendu public en 1995.
+- Il est aujourd'hui porté par Oracle.
+- On l'utilise pour des applications et beaucoup de serveurs.
+
+Pour écrire et lancer un programme Java, il faut un kit d'outils : le JDK. Section suivante.
+
 # Bit
 
 **Bit** — *binary digit*, chiffre binaire
