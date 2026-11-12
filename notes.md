@@ -258,6 +258,40 @@ public class Cart {
 
 Le programme qui effectue cette transformation s'appelle un compilateur. Section suivante.
 
+# Compilateur
+
+**Compiler** — *compilateur*
+
+- Le compilateur est un programme.
+- Il lit le code source et le transforme en fichiers `.class`.
+- Cette transformation s'appelle la *compilation*.
+
+**Entrée et sortie**
+
+- Entrée : `Cart.java`
+- Sortie : `Cart.class` et `Cart$Product.class` — un fichier `.class` par type
+- Si le source viole les règles du langage, la compilation échoue et rapporte l'erreur.
+
+**En Java**
+
+- Le compilateur s'appelle `javac`.
+- On le lance depuis un terminal, dans le dossier où se trouve `Cart.java`.
+- On écrit :
+
+```text
+javac Cart.java
+```
+
+- `javac` : le programme compilateur
+- `Cart.java` : le fichier source à compiler
+
+**Limite**
+
+- Compiler ne lance pas le panier.
+- Après `javac`, le `6` n'apparaît pas encore à l'écran.
+
+Un programme s'appuie souvent sur du code déjà écrit ailleurs. Ce code est organisé en bibliothèques. Section suivante.
+
 # Bit
 
 **Bit** — *binary digit*, chiffre binaire
