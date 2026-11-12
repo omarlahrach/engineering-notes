@@ -149,7 +149,7 @@ Le noyau est le cœur d'un ensemble plus large : le système d'exploitation. Sec
 
 **Operating system (OS)** — *système d'exploitation*
 
-Sans système d'exploitation, la machine ne vous offre ni écran d'accueil, ni explorateur, ni moyen simple d'ouvrir un site ou une application.
+Sans système d'exploitation, la machine ne vous offre ni écran d'accueil, ni explorateur, ni moyen simple d'ouvrir une application.
 
 **D'où il vient**
 
@@ -173,15 +173,15 @@ Sans système d'exploitation, la machine ne vous offre ni écran d'accueil, ni e
 
 **Nature de ces éléments**
 
-- Ce sont des **programmes**, donc du logiciel.
-- Explorateur, bureau ou écran d'accueil, réglages : ils font partie de l'OS.
-- Le navigateur fourni avec le système est aussi un programme. C'est une application : vous pouvez en installer un autre.
+- Ce sont des applications fournies avec l'OS — donc du logiciel que vous lancez et pilotez.
+- Explorateur, bureau ou écran d'accueil, réglages : ils font partie de ce que l'OS vous donne.
+- Le navigateur fourni avec le système est aussi une application : vous pouvez en installer un autre.
 
 **Composition**
 
 - L'OS est un logiciel : un ensemble de programmes.
 - Son cœur est le noyau.
-- Vous cliquez dans l'explorateur. L'explorateur demande au noyau d'accéder au disque.
+- Vous ouvrez l'explorateur. L'explorateur demande au noyau d'accéder au disque.
 - Chaque OS a son noyau. Les programmes passent par lui pour toucher au CPU, à la RAM, au disque et au réseau.
 
 Dans chaque composant contrôlé par le noyau, l'information est représentée par des bits. Section suivante.
