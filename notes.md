@@ -463,8 +463,8 @@ La JVM s'appuie sur des bibliothèques déjà compilées — comme `java.lang` p
 
 - Une bibliothèque est du code déjà écrit, fourni pour être réutilisé.
 - Elle est en général **déjà compilée** (fichiers `.class`).
-- Tu ne la recompiles pas à chaque fois : `javac` la trouve et l'associe à ton programme.
-- Tu peux aussi **créer ta propre** bibliothèque : du code que tu compiles une fois et que plusieurs programmes réutilisent.
+- Tu ne la recompiles pas à chaque fois : la JVM la charge et l'associe à ton programme.
+- Tu peux aussi **créer ta propre** bibliothèque : du code compilé une fois, réutilisé par plusieurs programmes.
 
 **Dans `Cart.java`**
 
