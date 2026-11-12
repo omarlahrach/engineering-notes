@@ -419,11 +419,6 @@ Un fichier `.class` ne contient pas du texte Java. Il contient du bytecode. Sect
 - Le reste de l'instruction tient aussi sur un ou quelques octets.
 - D'où le nom *bytecode* : un code fait d'octets, plus du texte comme `Cart.java`.
 
-**Portabilité**
-
-- Le même `.class` peut être recopié sur un autre PC, un autre OS.
-- On ne recompile pas `Cart.java` pour Windows, macOS ou Linux.
-
 **Limite**
 
 - Le CPU ne lit pas ce bytecode directement.
