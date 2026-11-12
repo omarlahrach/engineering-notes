@@ -1,7 +1,9 @@
 # Information
 
-L'information, c'est un fait ou un détail que l'on peut connaître, conserver, recopier ou transmettre.
-Un prix, un nom, un message, une photo : ce sont des informations.
+**Information** — *information*
+
+- L'information, c'est un fait ou un détail que l'on peut connaître, conserver, recopier ou transmettre.
+- Un prix, un nom, un message, une photo : ce sont des informations.
 
 **Formes**
 
