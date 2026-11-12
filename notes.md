@@ -22,7 +22,7 @@
 
 Un jeu vidéo peut prendre chacune de ces formes.
 
-Ces applications sont du logiciel. Section suivante.
+Une application est un type de logiciel destiné à l'utilisateur. Section suivante.
 
 # Logiciel
 
