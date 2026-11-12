@@ -485,3 +485,35 @@ Ces fichiers `.class` de bibliothèque sont souvent regroupés dans une archive 
 - Pour `Cart`, aucun JAR n'est nécessaire : `Cart.class` et `java.lang` suffisent.
 
 Sans installation dédiée, ni JVM, ni outil `jar`, ni `java.lang` ne sont sur la machine. Ces pièces — runtime, outil d'archive, bibliothèques de base — arrivent ensemble avec le JDK. Section suivante.
+
+# JDK
+
+**JDK** — *Java Development Kit*
+
+- Le JDK est le kit installé sur la machine pour développer en Java.
+- Il apporte notamment : `javac`, l'outil `jar`, des bibliothèques comme `java.lang`, et la commande `java` qui démarre une JVM.
+
+**OpenJDK**
+
+- *OpenJDK* est l'implémentation libre de référence.
+- Oracle JDK, Temurin, Corretto et d'autres en dérivent. Licence et support changent ; la base reste OpenJDK.
+
+**Versions**
+
+- Une version porte un numéro : 8, 11, 17, 21, 25…
+- Les versions **LTS** (*Long-Term Support*) sont faites pour durer.
+- `javac` et `java` doivent être compatibles avec le code.
+
+**Présence sur la machine**
+
+- Sans JDK, `javac` et `java` sont absents du terminal.
+- Avec un JDK, ces commandes répondent :
+
+```text
+javac -version
+java -version
+```
+
+- Chaque réponse affiche un numéro de version.
+
+Le JDK est en place. On peut compiler `Cart.java`, puis lancer la JVM pour afficher `6`. Section suivante.
