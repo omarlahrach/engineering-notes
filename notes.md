@@ -233,17 +233,18 @@ La RAM range ces octets. Section suivante.
 
 **RAM** — *Random Access Memory*, mémoire vive
 
-- La RAM conserve les octets pendant le traitement décrit dans le flux de l'informatique.
-- Elle est organisée en cases d'un octet chacune.
+- La RAM est la mémoire de travail de la machine.
+- Elle range les octets pendant l'exécution.
+- Elle est organisée en cases : une case, un octet.
 - Elle est volatile : sans courant, son contenu disparaît.
 
 **Accès**
 
 - Le CPU lit des octets en RAM pour les traiter.
-- Il écrit des octets en RAM pour conserver le résultat d'une opération.
-- *Random access* : accéder à un octet ne dépend pas de sa position ; le temps d'accès reste du même ordre.
+- Il écrit des octets en RAM pour y laisser un résultat.
+- *Random access* : le temps d'accès à une case ne dépend pas de sa position.
 
-Chaque octet en RAM porte une adresse qui le désigne. Section suivante.
+Chaque case a un numéro qui la désigne : une adresse. Section suivante.
 
 # Adresse
 
