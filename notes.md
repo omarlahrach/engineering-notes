@@ -197,6 +197,17 @@ Les applications tournent sur l'OS. Pour les écrire, on utilise un langage. Jav
 
 Un programme Java s'écrit d'abord en texte. Ce texte s'appelle le code source. Section suivante.
 
+# Code source
+
+**Source code** — *code source*
+
+- Le code source est le programme écrit en texte, dans le langage choisi — ici Java.
+- Tu peux l'ouvrir, le lire, le modifier dans un éditeur.
+- En Java, le fichier porte en général l'extension `.java`.
+- Ce fichier est de l'information sur le disque : une suite de caractères, pas encore un programme en cours d'exécution.
+
+La machine n'exécute pas ce texte tel quel. Il faut une transformation : la compilation. Le programme qui l'effectue s'appelle un compilateur. Section suivante.
+
 # Bit
 
 **Bit** — *binary digit*, chiffre binaire
