@@ -64,6 +64,22 @@ Ces instructions sont regroupées dans un programme. Section suivante.
 
 Un ensemble de programmes forme un logiciel. Section suivante.
 
+# Logiciel
+
+**Software** — *logiciel*
+
+Un programme décrit une suite d'instructions. Seul, il ne couvre souvent qu'une partie du travail. Pour un but complet, plusieurs programmes doivent s'accorder. Cet ensemble, c'est le **logiciel**.
+
+**Deux cas**
+
+Vous lancez un logiciel et vous le pilotez : lire, écrire, envoyer, régler. Derrière ce que vous voyez, plusieurs programmes se partagent le travail — afficher, enregistrer, communiquer.
+
+Un autre logiciel tourne sans que vous le lanciez : vérifier qu'une version plus récente existe, la récupérer, la préparer. Même idée — des programmes pour un but — mais vous n'êtes pas aux commandes.
+
+La différence n'est pas le but. C'est qui pilote : vous, ou pas.
+
+Le logiciel que vous lancez et pilotez s'appelle une application. Section suivante.
+
 # Application
 
 **Application** — *application*
@@ -89,20 +105,6 @@ Un ensemble de programmes forme un logiciel. Section suivante.
 Un jeu vidéo peut prendre chacune de ces formes.
 
 Une application est un type de logiciel destiné à l'utilisateur. Section suivante.
-
-# Logiciel
-
-Vous lisez ces lignes sur un écran. Ce qui vous permet de les afficher, de défiler, de zoomer, de cliquer, ce n'est pas l'écran lui-même. C'est autre chose, que vous ne touchez pas : le **logiciel** (*software*).
-
-Le logiciel, ce sont les instructions qu'un téléphone ou un ordinateur exécute pour accomplir une tâche. L'écran, le clavier, la batterie, le boîtier : tout ce que vous pouvez tenir, c'est autre chose. Sans logiciel, ce ne serait qu'un assemblage de pièces inertes.
-
-Vous en utilisez déjà tous les jours :
-
-- un **site web** — une page dans votre navigateur : banque, journal, messagerie ;
-- une **application mobile** — sur votre téléphone : messages, météo, carte ;
-- une **application sur ordinateur** — traitement de texte, jeu, éditeur de photos.
-
-Ce que ce logiciel vous montre et vous laisse manipuler — un solde, un message, une photo — s'appelle l'information. Section suivante.
 
 # Machine
 
