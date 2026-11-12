@@ -186,6 +186,28 @@ Sans système d'exploitation, la machine ne vous offre ni écran d'accueil, ni e
 
 Dans chaque composant, l'information est portée par des bits. Section suivante.
 
+# Bit
+
+**Bit** — *binary digit*, chiffre binaire
+
+- Dans chaque composant, l'information est portée au plus petit niveau par des bits.
+- Un bit a deux états : `0` ou `1`.
+
+**Support**
+
+- Le bit est toujours `0` ou `1`. Le support change selon le composant.
+- **CPU** : une tension — haute pour `1`, basse pour `0`.
+- **RAM** : une charge dans un condensateur (minuscule réservoir électrique) — présente pour `1`, absente pour `0`.
+- **Disque magnétique** : l'orientation d'une zone aimantée — un sens pour `1`, l'autre pour `0`.
+
+**Capacité**
+
+- Un bit suffit pour un choix à deux réponses : `oui` / `non`, `0` / `1`.
+- Avec `n` bits, il existe `2ⁿ` choix distincts.
+- Plus l'information a de variantes, plus il faut de bits pour la représenter sans ambiguïté.
+
+Un bit seul ne suffit presque jamais : un caractère, un petit nombre, une couleur demandent plusieurs choix possibles à la fois. Les machines regroupent donc les bits. Le groupe standard en compte huit : l'octet. Section suivante.
+
 # Java
 
 **Java**
@@ -345,28 +367,6 @@ Ces fichiers `.class` de bibliothèque sont souvent regroupés dans une archive 
 - Le JAR compte surtout pour distribuer ou réutiliser du code.
 
 Sans installation dédiée, ni `javac`, ni `jar`, ni `java.lang` ne sont sur la machine. Ces pièces — compilateur, outils d'archive, bibliothèques de base — arrivent ensemble avec le JDK. Section suivante.
-
-# Bit
-
-**Bit** — *binary digit*, chiffre binaire
-
-- Dans chaque composant, l'information est portée au plus petit niveau par des bits.
-- Un bit a deux états : `0` ou `1`.
-
-**Support**
-
-- Le bit est toujours `0` ou `1`. Le support change selon le composant.
-- **CPU** : une tension — haute pour `1`, basse pour `0`.
-- **RAM** : une charge dans un condensateur (minuscule réservoir électrique) — présente pour `1`, absente pour `0`.
-- **Disque magnétique** : l'orientation d'une zone aimantée — un sens pour `1`, l'autre pour `0`.
-
-**Capacité**
-
-- Un bit suffit pour un choix à deux réponses : `oui` / `non`, `0` / `1`.
-- Avec `n` bits, il existe `2ⁿ` choix distincts.
-- Plus l'information a de variantes, plus il faut de bits pour la représenter sans ambiguïté.
-
-Un bit seul ne suffit presque jamais : un caractère, un petit nombre, une couleur demandent plusieurs choix possibles à la fois. Les machines regroupent donc les bits. Le groupe standard en compte huit : l'octet. Section suivante.
 
 # Octet
 
