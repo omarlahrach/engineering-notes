@@ -252,24 +252,21 @@ Chaque case a un numéro qui la désigne : une adresse. Section suivante.
 
 - La RAM est une suite de cases. Chaque case contient un octet.
 - Chaque case a un numéro : son adresse.
-- Exemple : l'adresse `1000` désigne la case numéro `1000`, pas le contenu `01000001` qui peut s'y trouver.
+- L'adresse `1000` désigne la case `1000`, pas l'octet `01000001` qui peut s'y trouver.
 
 **Rôle**
 
-- L'adresse sert au CPU pour demander un octet précis : « donne l'octet de la case `1000` » ou « écris cet octet dans la case `1000` ».
-- Le numéro n'est pas collé à l'intérieur de l'octet. C'est le CPU qui indique quel numéro il veut ; la RAM répond avec l'octet de cette case.
+- Le CPU demande un octet par son adresse : lire la case `1000`, ou y écrire.
+- Le numéro n'est pas dans l'octet. Le CPU indique le numéro ; la RAM renvoie l'octet.
 
 **Adresse comme information**
 
-- Une adresse peut elle-même être conservée en RAM, à une autre case : « l'octet utile est à la case `1000` ».
-- On le détaillera avec les pointeurs.
+- Une adresse peut elle-même être rangée en RAM, dans une autre case.
+- Cette case dit alors où se trouve l'octet utile.
 
 **Numérotation**
 
 - Les numéros se suivent : `0`, `1`, `2`, `3`…
-- Une information qui tient sur plusieurs octets occupe plusieurs cases voisines : adresse de départ et nombre d'octets.
+- Une information sur plusieurs octets occupe des cases voisines : adresse de départ et nombre d'octets.
 
-**Sens**
-
-- La case ne dit pas si l'octet est un caractère, un nombre ou autre chose.
-- La règle qui dit comment interpréter les octets porte un nom : le type. Section suivante.
+La case ne porte que des octets, sans dire ce qu'ils représentent. Il faut une règle de lecture : le type. Section suivante.
