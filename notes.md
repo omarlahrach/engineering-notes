@@ -213,19 +213,19 @@ Un bit seul ne suffit presque jamais : un caractère, un petit nombre, une coule
 **Octet** — *byte*
 
 - Un octet regroupe huit bits.
-- Huit n'est pas imposé par les mathématiques : c'est un compromis retenu par l'industrie.
-- Il offre `2⁸`, donc `256`, combinaisons, de `00000000` à `11111111`, suffisent pour une unité pratique de stockage et d'échange.
-- Dans l'usage courant, *byte* désigne un octet.
+- Huit n'est pas une loi mathématique : c'est le compromis retenu par l'industrie.
+- Un octet offre `2⁸`, donc `256`, combinaisons — de `00000000` à `11111111`.
 
 **Sens**
 
-- Les huit bits n'indiquent pas, à eux seuls, ce qu'ils représentent.
-- Le même motif `01000001` peut encoder des contenus différents selon la règle de lecture appliquée.
+- Les huit bits ne disent pas, à eux seuls, ce qu'ils représentent.
+- Le même motif `01000001` peut se lire comme le nombre `65` ou comme le caractère `A`.
+- Le résultat dépend de la règle de lecture.
 
 **Usage**
 
 - Les composants manipulent l'information par octets.
-- Une information peut occuper un ou plusieurs octets consécutifs.
+- Une information peut occuper un ou plusieurs octets à la suite.
 
 La RAM range ces octets. Section suivante.
 
