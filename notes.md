@@ -57,18 +57,19 @@ Ce flux est décrit par un programme. Section suivante.
 **Program** — *programme*
 
 - Un programme est une suite ordonnée d'instructions.
-- Chaque instruction applique une propriété de l'information : recopier, modifier, conserver ou envoyer.
-- Le programme décrit le flux de l'informatique. Il ne l'exécute pas.
+- Il décrit le flux de l'informatique. Il ne l'exécute pas.
+- Un logiciel est fait d'un ou plusieurs programmes.
+- Exécuter un logiciel, c'est exécuter les instructions de ses programmes.
 
-**Exemple**
+**Exemple — connexion**
 
-- Entrée : un montant.
-- Instruction 1 : lire le montant.
-- Instruction 2 : ajouter une taxe.
-- Instruction 3 : produire le total.
-- Sortie : le total.
+- Entrée : identifiant et mot de passe
+- Instruction 1 : recevoir l'identifiant et le mot de passe
+- Instruction 2 : les comparer à ce qui est déjà enregistré
+- Instruction 3 : autoriser l'accès, ou le refuser
+- Sortie : accès autorisé ou accès refusé
 
-Un programme est une unité de logiciel. Section suivante.
+Le site ou l'application contient un programme de ce genre. Qui l'exécute ? La machine. Section suivante.
 
 # Machine
 
