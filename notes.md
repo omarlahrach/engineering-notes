@@ -426,6 +426,37 @@ Un fichier `.class` ne contient pas du texte Java. Il contient du bytecode. Sect
 
 Ce programme s'appelle la JVM. Section suivante.
 
+# JVM
+
+**JVM** — *Java Virtual Machine*, machine virtuelle Java
+
+- La JVM est un programme.
+- Elle charge le bytecode des fichiers `.class` et le fait s'exécuter.
+
+**Commande**
+
+- Une fois les `.class` produits :
+
+```text
+java Cart
+```
+
+- `java` démarre la JVM.
+- `Cart` désigne la classe qui contient `main`.
+
+**Rôle**
+
+- Lire le bytecode.
+- Enchaîner ce qu'il demande : calculs, objets, appel à `println`…
+- Passer par l'OS et le noyau pour la mémoire, les fichiers, l'affichage.
+
+**Portabilité**
+
+- Le même `.class` tourne sur un autre OS si une JVM y est installée.
+- On ne recompile pas `Cart.java` pour chaque machine : on y installe une JVM.
+
+La JVM s'appuie sur des bibliothèques déjà compilées — comme `java.lang` pour `System.out`. Section suivante.
+
 # Bibliothèque
 
 **Library** — *bibliothèque*
