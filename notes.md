@@ -47,6 +47,23 @@ Vous saisissez un identifiant et un mot de passe, puis vous validez. Le reste se
 
 Ces instructions sont regroupées dans un programme. Section suivante.
 
+# Programme
+
+**Program** — *programme*
+
+- Un programme est une suite ordonnée d'instructions.
+- Il décrit le flux de l'informatique. Il ne l'exécute pas.
+
+**Exemple — connexion**
+
+- Entrée : identifiant et mot de passe
+- Instruction 1 : recevoir l'identifiant et le mot de passe
+- Instruction 2 : les comparer à ce qui est enregistré
+- Instruction 3 : autoriser l'accès, ou le refuser
+- Sortie : accès autorisé ou accès refusé
+
+Un ensemble de programmes forme un logiciel. Section suivante.
+
 # Application
 
 **Application** — *application*
@@ -86,25 +103,6 @@ Vous en utilisez déjà tous les jours :
 - une **application sur ordinateur** — traitement de texte, jeu, éditeur de photos.
 
 Ce que ce logiciel vous montre et vous laisse manipuler — un solde, un message, une photo — s'appelle l'information. Section suivante.
-
-# Programme
-
-**Program** — *programme*
-
-- Un programme est une suite ordonnée d'instructions.
-- Il décrit le flux de l'informatique. Il ne l'exécute pas.
-- Un logiciel est fait d'un ou plusieurs programmes.
-- Exécuter un logiciel, c'est exécuter les instructions de ses programmes.
-
-**Exemple — connexion**
-
-- Entrée : identifiant et mot de passe
-- Instruction 1 : recevoir l'identifiant et le mot de passe
-- Instruction 2 : les comparer à ce qui est déjà enregistré
-- Instruction 3 : autoriser l'accès, ou le refuser
-- Sortie : accès autorisé ou accès refusé
-
-Le site ou l'application contient un programme de ce genre. Qui l'exécute ? La machine. Section suivante.
 
 # Machine
 
