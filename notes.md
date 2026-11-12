@@ -208,6 +208,27 @@ Dans chaque composant, l'information est portée par des bits. Section suivante.
 
 Un bit seul ne suffit presque jamais : un caractère, un petit nombre, une couleur demandent plusieurs choix possibles à la fois. Les machines regroupent donc les bits. Le groupe standard en compte huit : l'octet. Section suivante.
 
+# Octet
+
+**Octet** — *byte*
+
+- Un octet regroupe huit bits.
+- Huit n'est pas une loi mathématique : c'est le compromis retenu par l'industrie.
+- Un octet offre `2⁸`, donc `256`, combinaisons — de `00000000` à `11111111`.
+
+**Sens**
+
+- Les huit bits ne disent pas, à eux seuls, ce qu'ils représentent.
+- Le même motif `01000001` peut se lire comme le nombre `65` ou comme le caractère `A`.
+- Le résultat dépend de la règle de lecture.
+
+**Usage**
+
+- Les composants manipulent l'information par octets.
+- Une information peut occuper un ou plusieurs octets à la suite.
+
+La RAM range ces octets. Section suivante.
+
 # Java
 
 **Java**
@@ -367,27 +388,6 @@ Ces fichiers `.class` de bibliothèque sont souvent regroupés dans une archive 
 - Le JAR compte surtout pour distribuer ou réutiliser du code.
 
 Sans installation dédiée, ni `javac`, ni `jar`, ni `java.lang` ne sont sur la machine. Ces pièces — compilateur, outils d'archive, bibliothèques de base — arrivent ensemble avec le JDK. Section suivante.
-
-# Octet
-
-**Octet** — *byte*
-
-- Un octet regroupe huit bits.
-- Huit n'est pas une loi mathématique : c'est le compromis retenu par l'industrie.
-- Un octet offre `2⁸`, donc `256`, combinaisons — de `00000000` à `11111111`.
-
-**Sens**
-
-- Les huit bits ne disent pas, à eux seuls, ce qu'ils représentent.
-- Le même motif `01000001` peut se lire comme le nombre `65` ou comme le caractère `A`.
-- Le résultat dépend de la règle de lecture.
-
-**Usage**
-
-- Les composants manipulent l'information par octets.
-- Une information peut occuper un ou plusieurs octets à la suite.
-
-La RAM range ces octets. Section suivante.
 
 # RAM
 
