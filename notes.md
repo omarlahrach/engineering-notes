@@ -35,16 +35,20 @@ Vous saisissez un identifiant et un mot de passe, puis vous vous connectez. Ce q
 
 # Informatique
 
-**Définition**
+**Computing** — *informatique*
 
-- L'informatique est l'information automatique.
-- Les opérations — recopier, modifier, conserver, envoyer — s'exécutent sans qu'une personne les refasse à chaque étape.
+- Vous saisissez un identifiant et un mot de passe, puis vous vous connectez.
+- Vous ne comparez pas le mot de passe à la main avec une liste papier.
+- Vous n'ouvrez pas vous-même la session compte par compte.
+- Le logiciel reçoit ces informations, les vérifie, puis ouvre ou refuse l'accès.
+
+L'informatique, c'est ce traitement de l'information par le logiciel, une fois l'action déclenchée.
 
 **Flux**
 
-- Entrée : de l'information.
-- Traitement : des opérations sur cette information.
-- Sortie : de l'information transformée ou conservée.
+- Entrée : identifiant et mot de passe
+- Traitement : vérification, décision d'accès
+- Sortie : session ouverte ou accès refusé
 
 Ce flux est décrit par un programme. Section suivante.
 
