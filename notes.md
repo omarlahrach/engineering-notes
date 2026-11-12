@@ -29,7 +29,10 @@ Traiter l'information de façon automatique, c'est l'informatique. Section suiva
 
 # Informatique
 
-L'informatique est le traitement automatique de l'information.
+**Computing** — *informatique*
+
+- L'informatique est le traitement automatique de l'information.
+- Automatique : des instructions écrites à l'avance s'appliquent sans que vous fassiez chaque étape à la main.
 
 **Flux**
 
