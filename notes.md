@@ -490,30 +490,26 @@ Sans installation dédiée, ni JVM, ni outil `jar`, ni `java.lang` ne sont sur l
 
 **JDK** — *Java Development Kit*
 
-- Le JDK est le kit installé sur la machine pour développer en Java.
-- Il apporte notamment : `javac`, l'outil `jar`, des bibliothèques comme `java.lang`, et la commande `java` qui démarre une JVM.
+- Le JDK est un **logiciel** : le kit qui regroupe tout ce qu’il faut pour écrire, compiler et exécuter un programme Java sur une machine.
+- Ce n’est pas une application : tu ne lances pas « le JDK », tu utilises ses programmes (`javac`, `java`, `jar`).
+- Sans ce kit, ces programmes n’existent pas ensemble sur la machine.
+
+**Ce qu’il contient**
+
+- `javac` : le compilateur — transforme le code source (`.java`) en bytecode (`.class`).
+- `java` : la commande qui démarre une JVM pour exécuter ce bytecode.
+- l’outil `jar` : regroupe des `.class` (et d’autres fichiers) dans une archive `.jar`.
+- des bibliothèques de base, dont `java.lang` (`System`, etc.), déjà compilées.
 
 **OpenJDK**
 
-- *OpenJDK* est l'implémentation libre de référence.
-- Oracle JDK, Temurin, Corretto et d'autres en dérivent. Licence et support changent ; la base reste OpenJDK.
+- *OpenJDK* est l’implémentation libre de référence de ce kit.
+- Oracle JDK, Temurin, Corretto et d’autres en dérivent. Licence et support changent ; le contenu de base reste celui d’OpenJDK.
 
 **Versions**
 
-- Une version porte un numéro : 8, 11, 17, 21, 25…
-- Les versions **LTS** (*Long-Term Support*) sont faites pour durer.
-- `javac` et `java` doivent être compatibles avec le code.
+- Chaque kit porte un numéro : 8, 11, 17, 21, 25…
+- Les versions **LTS** (*Long-Term Support*) sont maintenues longtemps.
+- Le numéro du kit fixe jusqu’où vont le langage, le bytecode et les bibliothèques fournies.
 
-**Présence sur la machine**
-
-- Sans JDK, `javac` et `java` sont absents du terminal.
-- Avec un JDK, ces commandes répondent :
-
-```text
-javac -version
-java -version
-```
-
-- Chaque réponse affiche un numéro de version.
-
-Le JDK est en place. On peut compiler `Cart.java`, puis lancer la JVM pour afficher `6`. Section suivante.
+Avec un JDK, la chaîne pour `Cart` est complète : `javac` produit les `.class`, `java` lance la JVM, `java.lang` est là pour `System.out.println` — le terminal affiche `6`. Section suivante.
