@@ -195,7 +195,7 @@ Les applications tournent sur l'OS. Pour les écrire, on utilise un langage. Jav
 - Il est aujourd'hui porté par Oracle.
 - On l'utilise pour des applications et beaucoup de serveurs.
 
-Pour écrire et lancer un programme Java, il faut un kit d'outils : le JDK. Section suivante.
+Un programme Java s'écrit d'abord en texte. Ce texte s'appelle le code source. Section suivante.
 
 # Bit
 
