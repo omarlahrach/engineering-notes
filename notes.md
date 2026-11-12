@@ -246,6 +246,31 @@ La RAM range ces octets. Section suivante.
 
 Chaque case a un numéro qui la désigne : une adresse. Section suivante.
 
+# Adresse
+
+**Address** — *adresse*
+
+- La RAM est une suite de cases. Chaque case contient un octet.
+- Chaque case a un numéro : son adresse.
+- L'adresse `1000` désigne la case `1000`, pas l'octet `01000001` qui peut s'y trouver.
+
+**Rôle**
+
+- Le CPU demande un octet par son adresse : lire la case `1000`, ou y écrire.
+- Le numéro n'est pas dans l'octet. Le CPU indique le numéro ; la RAM renvoie l'octet.
+
+**Adresse comme information**
+
+- Une adresse peut elle-même être rangée en RAM, dans une autre case.
+- Cette case dit alors où se trouve l'octet utile.
+
+**Numérotation**
+
+- Les numéros se suivent : `0`, `1`, `2`, `3`…
+- Une information sur plusieurs octets occupe des cases voisines : adresse de départ et nombre d'octets.
+
+La case ne porte que des octets, sans dire ce qu'ils représentent. Il faut une règle de lecture : le type. Section suivante.
+
 # Java
 
 **Java**
@@ -405,28 +430,3 @@ Ces fichiers `.class` de bibliothèque sont souvent regroupés dans une archive 
 - Le JAR compte surtout pour distribuer ou réutiliser du code.
 
 Sans installation dédiée, ni `javac`, ni `jar`, ni `java.lang` ne sont sur la machine. Ces pièces — compilateur, outils d'archive, bibliothèques de base — arrivent ensemble avec le JDK. Section suivante.
-
-# Adresse
-
-**Address** — *adresse*
-
-- La RAM est une suite de cases. Chaque case contient un octet.
-- Chaque case a un numéro : son adresse.
-- L'adresse `1000` désigne la case `1000`, pas l'octet `01000001` qui peut s'y trouver.
-
-**Rôle**
-
-- Le CPU demande un octet par son adresse : lire la case `1000`, ou y écrire.
-- Le numéro n'est pas dans l'octet. Le CPU indique le numéro ; la RAM renvoie l'octet.
-
-**Adresse comme information**
-
-- Une adresse peut elle-même être rangée en RAM, dans une autre case.
-- Cette case dit alors où se trouve l'octet utile.
-
-**Numérotation**
-
-- Les numéros se suivent : `0`, `1`, `2`, `3`…
-- Une information sur plusieurs octets occupe des cases voisines : adresse de départ et nombre d'octets.
-
-La case ne porte que des octets, sans dire ce qu'ils représentent. Il faut une règle de lecture : le type. Section suivante.
