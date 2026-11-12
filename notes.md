@@ -1,3 +1,29 @@
+# Application
+
+**Application** — *application*
+
+- Une application, c'est ce que vous lancez pour accomplir une tâche.
+- Vous la touchez par son icône, son raccourci ou son adresse web.
+
+**Exemples**
+
+- un navigateur
+- une messagerie
+- un traitement de texte
+- un jeu
+- une appli météo ou carte
+
+**Formes**
+
+- application mobile — sur le téléphone
+- application desktop — sur le PC
+- application web ou site web — dans le navigateur
+- sur une console
+
+Un jeu vidéo peut prendre chacune de ces formes.
+
+Ces applications sont du logiciel. Section suivante.
+
 # Logiciel
 
 Vous lisez ces lignes sur un écran. Ce qui vous permet de les afficher, de défiler, de zoomer, de cliquer, ce n'est pas l'écran lui-même. C'est autre chose, que vous ne touchez pas : le **logiciel** (*software*).
