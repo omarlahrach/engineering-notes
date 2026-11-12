@@ -271,6 +271,34 @@ Chaque case a un numéro qui la désigne : une adresse. Section suivante.
 
 La case ne porte que des octets, sans dire ce qu'ils représentent. Il faut une règle de lecture : le type. Section suivante.
 
+# Type
+
+**Type**
+
+- Le type est la règle de lecture des octets à partir d'une adresse.
+- Il fixe : combien d'octets lire, comment les interpréter, quelles actions sont permises.
+
+**Exemple**
+
+- Même adresse `1000`, même octet `01000001`.
+- Type nombre : on lit `65`.
+- Type caractère : on lit `A`.
+- L'octet en RAM ne change pas. Seule la règle change.
+
+**Taille**
+
+- Le type dit combien d'octets prendre depuis l'adresse.
+- Un type peut lire 1 octet ; un autre, 4.
+- À la même adresse, deux types ne lisent pas forcément la même quantité.
+
+**Actions**
+
+- Le type autorise ou refuse une action.
+- Sur un nombre, `+ 1` a un sens.
+- Sur un caractère, la même action n'a pas le même sens.
+
+C'est le programme qui fixe le type quand il lit ou écrit en RAM. Pour écrire ce programme, on utilise un langage de programmation. Section suivante.
+
 # Java
 
 **Java**
