@@ -292,6 +292,32 @@ javac Cart.java
 
 Un fichier `.class` ne contient pas du texte Java. Il contient du bytecode. Section suivante.
 
+# Bytecode
+
+**Bytecode**
+
+- Après `javac Cart.java`, `Cart.class` et `Cart$Product.class` ne contiennent plus le texte Java.
+- Ils contiennent du **bytecode** : une suite d'instructions compactes, produites par le compilateur.
+
+**Nom**
+
+- *Byte* signifie octet.
+- Chaque instruction de bytecode commence en général par un octet qui indique l'opération : charger une valeur, additionner, terminer une méthode…
+- Le reste de l'instruction tient aussi sur un ou quelques octets.
+- D'où le nom *bytecode* : un code fait d'octets, plus du texte comme `Cart.java`.
+
+**Portabilité**
+
+- Le même `.class` peut être recopié sur un autre PC, un autre OS.
+- On ne recompile pas `Cart.java` pour Windows, macOS ou Linux.
+
+**Limite**
+
+- Le CPU ne lit pas ce bytecode directement.
+- Il faut un programme qui l'interprète ou le traduit vers les instructions du CPU.
+
+Ce programme s'appelle la JVM. Section suivante.
+
 # Bibliothèque
 
 **Library** — *bibliothèque*
