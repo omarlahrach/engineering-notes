@@ -184,7 +184,7 @@ Sans système d'exploitation, la machine ne vous offre ni écran d'accueil, ni e
 - Vous ouvrez l'explorateur. L'explorateur demande au noyau d'accéder au disque.
 - Chaque OS a son noyau. Les programmes passent par lui pour toucher au CPU, à la RAM, au disque et au réseau.
 
-Les applications tournent sur l'OS. Pour les écrire, on utilise un langage. Java est l'un des langages les plus utilisés pour cet objectif. Section suivante.
+Dans chaque composant, l'information est portée par des bits. Section suivante.
 
 # Java
 
