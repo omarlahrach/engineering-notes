@@ -14,36 +14,24 @@ Ce que ce logiciel vous montre et vous laisse manipuler — un solde, un message
 
 # Information
 
-**Contenu**
+L'information est un contenu qu'on peut nommer et réutiliser. Le logiciel l'affiche, la conserve et la fait circuler.
 
-- L'information est un contenu qu'on peut nommer et réutiliser.
-- Elle est discrète (symbole, nombre…) ou numérisée (son, image…).
-- Les exemples ci-dessous illustrent des formes courantes de ce contenu.
+**Formes**
 
-**Exemples — valeurs discrètes**
+- un nombre : `42`, `3.14`
+- un caractère ou un texte : `A`, `Bonjour`
+- une date ou une heure : `2026-11-10`, `14:30`
+- un choix oui / non
+- une couleur : `rouge` ou `#FF0000`
+- un son, une image, une vidéo
 
-- `42` — un nombre entier
-- `3.14` — un nombre décimal
-- `A` — un caractère
-- `Bonjour` — un texte
-- `2026-11-10` — une date
-- `14:30` — une heure
-- `oui` / `non` — un booléen
-- `rouge` ou `#FF0000` — une couleur
+**Actions**
 
-**Exemples — médias numérisés**
+- recopier sans déformer
+- modifier selon une règle
+- conserver ou envoyer à distance
 
-- un extrait musical — un son
-- une photo — une image
-- une séquence filmée — une vidéo
-
-**Propriétés**
-
-- On peut le recopier sans le déformer.
-- On peut le modifier selon une règle.
-- On peut le conserver ou l'envoyer à distance.
-
-Ce contenu traité automatiquement s'appelle l'information automatique : l'informatique. Section suivante.
+Quand ces actions s'enchaînent sans intervention manuelle à chaque étape, on parle d'informatique. Section suivante.
 
 # Informatique
 
