@@ -290,7 +290,7 @@ javac Cart.java
 - Compiler ne lance pas le panier.
 - Après `javac`, le `6` n'apparaît pas encore à l'écran.
 
-Un programme s'appuie souvent sur du code déjà écrit ailleurs. Ce code est organisé en bibliothèques. Section suivante.
+Un fichier `.class` ne contient pas du texte Java. Il contient du bytecode. Section suivante.
 
 # Bibliothèque
 
