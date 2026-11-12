@@ -73,11 +73,15 @@ Le site ou l'application contient un programme de ce genre. Qui l'exécute ? La 
 
 # Machine
 
-Une machine est un ordinateur. Elle exécute un programme.
+La machine exécute le logiciel.
 
-- **CPU** — *Central Processing Unit*, le processeur. Il exécute les instructions du programme.
+Ce n'est pas une idée abstraite : c'est l'appareil sous vos yeux ou sous vos doigts — un PC, un téléphone, une tablette, un serveur.
+
+Pour le faire, elle s'appuie sur quatre composants :
+
+- **CPU** — *Central Processing Unit*, le processeur. Il exécute les instructions.
 - **RAM** — *Random Access Memory*, la mémoire vive. Elle retient l'information pendant l'exécution. Sans courant, ce contenu disparaît.
-- **Disque** — il conserve le programme, et le reste de l'information, après l'arrêt.
+- **Disque** — il conserve le logiciel, et le reste de l'information, après l'arrêt.
 - **Réseau** — il relie une machine à une autre.
 
 À travers le réseau, la machine qui contacte est le client. La machine qui reste disponible et qui répond est le serveur.
