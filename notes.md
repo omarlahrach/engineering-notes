@@ -1,3 +1,32 @@
+# Information
+
+L'information, c'est un fait ou un détail que l'on peut connaître, conserver, recopier ou transmettre.
+Un prix, un nom, un message, une photo : ce sont des informations.
+
+**Formes**
+
+Valeurs :
+
+- un nombre : `42`, `3.14`
+- un caractère ou un texte : `A`, `Bonjour`
+- une date ou une heure : `2026-11-10`, `14:30`
+- un choix oui / non
+- une couleur : `rouge` ou `#FF0000`
+
+Médias :
+
+- un son
+- une image
+- une vidéo
+
+**Actions**
+
+- recopier sans déformer
+- modifier selon une règle
+- envoyer à distance
+
+Traiter l'information de façon automatique, c'est l'informatique. Section suivante.
+
 # Application
 
 **Application** — *application*
@@ -37,27 +66,6 @@ Vous en utilisez déjà tous les jours :
 - une **application sur ordinateur** — traitement de texte, jeu, éditeur de photos.
 
 Ce que ce logiciel vous montre et vous laisse manipuler — un solde, un message, une photo — s'appelle l'information. Section suivante.
-
-# Information
-
-L'information est un contenu qu'on peut nommer et réutiliser. Le logiciel l'affiche, la conserve et la fait circuler.
-
-**Formes**
-
-- un nombre : `42`, `3.14`
-- un caractère ou un texte : `A`, `Bonjour`
-- une date ou une heure : `2026-11-10`, `14:30`
-- un choix oui / non
-- une couleur : `rouge` ou `#FF0000`
-- un son, une image, une vidéo
-
-**Actions**
-
-- recopier sans déformer
-- modifier selon une règle
-- conserver ou envoyer à distance
-
-Vous saisissez un identifiant et un mot de passe, puis vous vous connectez. Ce qui s'exécute alors relève de l'informatique. Section suivante.
 
 # Informatique
 
