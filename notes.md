@@ -37,18 +37,18 @@ Vous saisissez un identifiant et un mot de passe, puis vous vous connectez. Ce q
 
 **Computing** — *informatique*
 
-- Vous saisissez un identifiant et un mot de passe, puis vous vous connectez.
-- Vous ne comparez pas le mot de passe à la main avec une liste papier.
-- Vous n'ouvrez pas vous-même la session compte par compte.
-- Le logiciel reçoit ces informations, les vérifie, puis ouvre ou refuse l'accès.
+- Dès que vous validez, le logiciel prend le relais.
+- Il reçoit l'identifiant et le mot de passe.
+- Il les compare à ce qui est déjà enregistré.
+- Il autorise l'accès, ou le refuse.
 
 L'informatique, c'est ce traitement de l'information par le logiciel, une fois l'action déclenchée.
 
 **Flux**
 
 - Entrée : identifiant et mot de passe
-- Traitement : vérification, décision d'accès
-- Sortie : session ouverte ou accès refusé
+- Traitement : comparaison et décision
+- Sortie : accès autorisé ou accès refusé
 
 Ce flux est décrit par un programme. Section suivante.
 
