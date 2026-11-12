@@ -309,6 +309,17 @@ Un programme s'appuie souvent sur du code déjà écrit ailleurs. Ce code est or
 
 Ces fichiers `.class` de bibliothèque sont souvent regroupés dans une archive : le JAR. Section suivante.
 
+# JAR
+
+**JAR** — *Java ARchive*
+
+- Un JAR est une archive : plusieurs fichiers `.class` (et parfois d'autres fichiers) regroupés en un seul fichier `.jar`.
+- Ça simplifie le partage et l'utilisation d'une bibliothèque : un fichier au lieu d'un dossier de classes.
+- Une bibliothèque que tu crées toi-même peut aussi être empaquetée en JAR.
+- Le JAR compte surtout pour distribuer ou réutiliser du code.
+
+Sans installation dédiée, ni `javac`, ni `jar`, ni `java.lang` ne sont sur la machine. Ces pièces — compilateur, outils d'archive, bibliothèques de base — arrivent ensemble avec le JDK. Section suivante.
+
 # Bit
 
 **Bit** — *binary digit*, chiffre binaire
