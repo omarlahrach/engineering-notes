@@ -204,7 +204,44 @@ Un programme Java s'écrit d'abord en texte. Ce texte s'appelle le code source. 
 - Le code source est le programme écrit en texte, dans le langage choisi — ici Java.
 - Tu peux l'ouvrir, le lire, le modifier dans un éditeur.
 - En Java, le fichier porte en général l'extension `.java`.
-- Ce fichier est de l'information sur le disque : une suite de caractères, pas encore un programme en cours d'exécution.
+- Sur le disque, ce n'est encore qu'un fichier texte : pas un programme en train de tourner.
+
+**Exemple — panier**
+
+Tu fais des courses. Chaque article a un nom et un prix. Tu veux le total à payer.
+
+```java
+public class Cart {
+
+    static class Product {
+        String name;
+        int price;
+
+        Product(String name, int price) {
+            this.name = name;
+            this.price = price;
+        }
+    }
+
+    static int total(Product[] products) {
+        int sum = 0;
+        for (int i = 0; i < products.length; i++) {
+            sum = sum + products[i].price;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Product[] products = {
+            new Product("bread", 2),
+            new Product("milk", 1),
+            new Product("pasta", 3)
+        };
+        int result = total(products);
+        System.out.println(result);
+    }
+}
+```
 
 La machine n'exécute pas ce texte tel quel. Il faut une transformation : la compilation. Le programme qui l'effectue s'appelle un compilateur. Section suivante.
 
