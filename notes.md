@@ -303,7 +303,7 @@ C'est le programme qui fixe le type quand il lit ou écrit en RAM. Pour écrire 
 
 **Java**
 
-- Java est un langage : un vocabulaire et des règles pour écrire des programmes.
+- Java est un langage de programmation : un vocabulaire et des règles pour écrire des programmes.
 - Il a été créé chez Sun Microsystems (James Gosling et son équipe), rendu public en 1995.
 - Il est aujourd'hui porté par Oracle.
 - On l'utilise pour des applications et beaucoup de serveurs.
