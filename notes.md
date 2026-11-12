@@ -27,6 +27,26 @@ Médias :
 
 Traiter l'information de façon automatique, c'est l'informatique. Section suivante.
 
+# Informatique
+
+L'informatique est le traitement automatique de l'information.
+
+**Flux**
+
+- Entrée : de l'information
+- Traitement : des actions sur cette information (recopier, modifier, envoyer à distance)
+- Sortie : de l'information
+
+**Exemple — connexion**
+
+Vous saisissez un identifiant et un mot de passe, puis vous validez. Le reste se fait sans vous :
+
+- Entrée : l'identifiant et le mot de passe
+- Traitement : les comparer à ce qui est enregistré
+- Sortie : accès autorisé ou accès refusé
+
+Ces instructions sont regroupées dans un programme. Section suivante.
+
 # Application
 
 **Application** — *application*
@@ -66,25 +86,6 @@ Vous en utilisez déjà tous les jours :
 - une **application sur ordinateur** — traitement de texte, jeu, éditeur de photos.
 
 Ce que ce logiciel vous montre et vous laisse manipuler — un solde, un message, une photo — s'appelle l'information. Section suivante.
-
-# Informatique
-
-**Computing** — *informatique*
-
-- Dès que vous validez, le logiciel prend le relais.
-- Il reçoit l'identifiant et le mot de passe.
-- Il les compare à ce qui est déjà enregistré.
-- Il autorise l'accès, ou le refuse.
-
-L'informatique, c'est ce traitement de l'information par le logiciel, une fois l'action déclenchée.
-
-**Flux**
-
-- Entrée : identifiant et mot de passe
-- Traitement : comparaison et décision
-- Sortie : accès autorisé ou accès refusé
-
-Ce flux est décrit par un programme. Section suivante.
 
 # Programme
 
