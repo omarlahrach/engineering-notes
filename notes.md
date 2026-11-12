@@ -292,6 +292,23 @@ javac Cart.java
 
 Un programme s'appuie souvent sur du code déjà écrit ailleurs. Ce code est organisé en bibliothèques. Section suivante.
 
+# Bibliothèque
+
+**Library** — *bibliothèque*
+
+- Une bibliothèque est du code déjà écrit, fourni pour être réutilisé.
+- Elle est en général **déjà compilée** (fichiers `.class`).
+- Tu ne la recompiles pas à chaque fois : `javac` la trouve et l'associe à ton programme.
+- Tu peux aussi **créer ta propre** bibliothèque : du code que tu compiles une fois et que plusieurs programmes réutilisent.
+
+**Dans `Cart.java`**
+
+- La seule pièce prise dehors, c'est `System.out.println(result)`.
+- `System` vient de la bibliothèque `java.lang`.
+- `java.lang` est disponible automatiquement : aucun `import` n'apparaît dans le fichier.
+
+Ces fichiers `.class` de bibliothèque sont souvent regroupés dans une archive : le JAR. Section suivante.
+
 # Bit
 
 **Bit** — *binary digit*, chiffre binaire
