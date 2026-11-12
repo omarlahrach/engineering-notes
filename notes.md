@@ -110,19 +110,42 @@ Le noyau est le cœur d'un ensemble plus large : le système d'exploitation. Sec
 
 **Operating system (OS)** — *système d'exploitation*
 
-- Le système d'exploitation est un ensemble de programmes.
-- Son cœur est le noyau.
-- Autour du noyau : d'autres programmes qui rendent la machine utilisable.
+Sans système d'exploitation, la machine ne vous offre ni écran d'accueil, ni explorateur, ni moyen simple d'ouvrir un site ou une application.
+
+**D'où il vient**
+
+- Il est en général déjà installé à l'achat du PC ou du téléphone.
+- Le fabricant ou l'éditeur le fournit avec la machine — ou vous l'installez ensuite.
 
 **Exemples**
 
-- Linux
-- Windows
-- macOS
+- Windows — beaucoup de PC
+- macOS — les Mac
+- iOS — iPhone
+- Android — la plupart des autres téléphones
+- Linux — de nombreux serveurs, et certains PC
 
-Chaque système d'exploitation a son noyau. Les programmes passent par ce noyau pour accéder au matériel.
+**Ce que vous en voyez**
 
-Pour exécuter un programme, le noyau crée un processus. Section suivante.
+- Explorateur de fichiers
+- Bureau ou écran d'accueil
+- Réglages
+- Souvent un navigateur fourni avec le système
+
+**Nature de ces éléments**
+
+- Ce sont des **programmes**, donc du logiciel.
+- Explorateur, bureau ou écran d'accueil, réglages : ils font partie de l'OS.
+- Le navigateur fourni avec le système est aussi un programme. C'est une application : vous pouvez en installer un autre.
+
+**Composition**
+
+- L'OS est un logiciel : un ensemble de programmes.
+- Son cœur est le noyau.
+- Vous cliquez dans l'explorateur. L'explorateur demande au noyau d'accéder au disque.
+- Chaque OS a son noyau. Les programmes passent par lui pour toucher au CPU, à la RAM, au disque et au réseau.
+
+Dans chaque composant contrôlé par le noyau, l'information est représentée par des bits. Section suivante.
 
 # Bit
 
