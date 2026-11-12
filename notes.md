@@ -190,22 +190,23 @@ Dans chaque composant contrôlé par le noyau, l'information est représentée p
 
 **Bit** — *binary digit*, chiffre binaire
 
-- C'est l'unité avec laquelle chaque composant représente l'information.
+- Dans chaque composant, l'information est portée au plus petit niveau par des bits.
 - Un bit a deux états : `0` ou `1`.
 
 **Support**
 
 - Le bit est toujours `0` ou `1`. Le support change selon le composant.
-- **CPU** : une tension. Haute pour `1`, basse pour `0`.
-- **RAM** : une charge dans un condensateur, réservoir électrique minuscule. Présente pour `1`, absente pour `0`.
-- **Disque magnétique** : l'orientation d'une zone aimantée. Un sens pour `1`, le sens opposé pour `0`.
+- **CPU** : une tension — haute pour `1`, basse pour `0`.
+- **RAM** : une charge dans un condensateur (minuscule réservoir électrique) — présente pour `1`, absente pour `0`.
+- **Disque magnétique** : l'orientation d'une zone aimantée — un sens pour `1`, l'autre pour `0`.
 
 **Capacité**
 
-- Un bit encode un choix à deux réponses : `oui` ou `non`, `0` ou `1`.
-- Avec `n` bits, il existe `2ⁿ` choix distincts. Plus l'information demande de variantes, plus il faut de bits pour la représenter sans ambiguïté.
+- Un bit suffit pour un choix à deux réponses : `oui` / `non`, `0` / `1`.
+- Avec `n` bits, il existe `2ⁿ` choix distincts.
+- Plus l'information a de variantes, plus il faut de bits pour la représenter sans ambiguïté.
 
-Le groupe de huit bits s'appelle un octet. Section suivante.
+Un bit seul ne suffit presque jamais : un caractère, un petit nombre, une couleur demandent plusieurs choix possibles à la fois. Les machines regroupent donc les bits. Le groupe standard en compte huit : l'octet. Section suivante.
 
 # Octet
 
