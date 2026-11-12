@@ -132,16 +132,16 @@ Plusieurs programmes tournent en même temps et se partagent ces composants. Un 
 **Kernel** — *noyau*
 
 - Le noyau est un programme.
-- Il contrôle l'accès au CPU, à la RAM, au disque et au réseau.
-- Les autres programmes ne touchent pas ces composants directement.
-- Ils passent par le noyau : chaque demande est un *appel système* (*system call*).
+- Les autres programmes ne parlent pas directement au CPU, à la RAM, au disque ou au réseau.
+- Ils passent par le noyau. Chaque demande de ce type est un *appel système* (*system call*).
 
 **Rôle**
 
-- Accorder ou refuser l'accès au matériel.
-- Allouer de la RAM.
+- Décider qui a accès à quel composant.
+- Accorder ou refuser cet accès.
+- Partager la RAM entre les programmes.
 - Lire et écrire sur le disque.
-- Échanger sur le réseau.
+- Faire passer l'information sur le réseau.
 
 Le noyau est le cœur d'un ensemble plus large : le système d'exploitation. Section suivante.
 
