@@ -113,20 +113,19 @@ L'application décrit quoi faire. Il faut un appareil pour l'exécuter : la mach
 
 # Machine
 
-La machine exécute le logiciel.
+**Machine** — *machine*
 
-Ce n'est pas une idée abstraite : c'est l'appareil sous vos yeux ou sous vos doigts — un PC, un téléphone, une tablette, un serveur.
+- La machine est l'appareil qui exécute le logiciel : un PC, un téléphone, une tablette, une console, un serveur.
+- Pour cela, elle s'appuie sur quatre composants :
 
-Pour le faire, elle s'appuie sur quatre composants :
+**Composants**
 
 - **CPU** — *Central Processing Unit*, le processeur. Il exécute les instructions.
-- **RAM** — *Random Access Memory*, la mémoire vive. Elle retient l'information pendant l'exécution. Sans courant, ce contenu disparaît.
-- **Disque** — il conserve le logiciel, et le reste de l'information, après l'arrêt.
+- **RAM** — *Random Access Memory*, la mémoire vive. C'est la mémoire de travail : elle retient l'information pendant l'exécution. Sans courant, ce contenu disparaît.
+- **Disque** — la mémoire de stockage : il conserve le logiciel et le reste de l'information, même après l'arrêt.
 - **Réseau** — il relie une machine à une autre.
 
-À travers le réseau, la machine qui contacte est le client. La machine qui reste disponible et qui répond est le serveur.
-
-Ces composants ne sont pas utilisés directement par chaque programme. Un programme particulier les contrôle : le noyau. Section suivante.
+Plusieurs programmes tournent en même temps et se partagent ces composants. Un programme particulier répartit cet accès : le noyau. Section suivante.
 
 # Noyau
 
