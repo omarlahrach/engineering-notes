@@ -31,7 +31,7 @@ L'information est un contenu qu'on peut nommer et réutiliser. Le logiciel l'aff
 - modifier selon une règle
 - conserver ou envoyer à distance
 
-Quand ces actions s'enchaînent sans intervention manuelle à chaque étape, on parle d'informatique. Section suivante.
+Vous saisissez un identifiant et un mot de passe, puis vous vous connectez. Ce qui s'exécute alors relève de l'informatique. Section suivante.
 
 # Informatique
 
