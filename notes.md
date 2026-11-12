@@ -84,15 +84,15 @@ Le logiciel que vous lancez et pilotez s'appelle une application. Section suivan
 
 **Application** — *application*
 
-- Une application, c'est ce que vous lancez pour accomplir une tâche.
-- Vous la touchez par son icône, son raccourci ou son adresse web.
+- Une application est un logiciel que vous lancez et pilotez.
+- Vous l'ouvrez pour accomplir une tâche : lire, écrire, envoyer, jouer, consulter.
 
 **Exemples**
 
 - un navigateur
 - une messagerie
 - un traitement de texte
-- un jeu
+- un jeu vidéo
 - une appli météo ou carte
 
 **Formes**
@@ -104,7 +104,7 @@ Le logiciel que vous lancez et pilotez s'appelle une application. Section suivan
 
 Un jeu vidéo peut prendre chacune de ces formes.
 
-Une application est un type de logiciel destiné à l'utilisateur. Section suivante.
+L'application décrit quoi faire. Il faut un appareil pour l'exécuter : la machine. Section suivante.
 
 # Machine
 
